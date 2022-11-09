@@ -9,8 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/users", userRoute);
 
-
-app.listen(PORT, async () => {
+app.listen(PORT || 8080, async () => {
   try {
     await connect;
   } catch (err) {
