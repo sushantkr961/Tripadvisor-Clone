@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from '../Components/Sushant/Home';
+import Home from '../Components/Sushant/Pages/Home';
 
 
 const AllRoutes = () => {
