@@ -20,7 +20,7 @@ function BasicUsage() {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Modal Titl</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Image />
