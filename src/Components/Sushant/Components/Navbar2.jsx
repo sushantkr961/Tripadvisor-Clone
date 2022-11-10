@@ -16,18 +16,18 @@ const Navbar2 = () => {
             <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}}>Restaurants <IoIosRestaurant fontSize='20px' /> </Box>
             <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}}>Travel Stories <BiGlobe fontSize='20px' /> </Box>
             <Menu>
-                <MenuButton display='flex' justifyContent='space-between' border='1px solid black' bg='#ffffff' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' textAlign='left' _hover={{ bg: '#000000', color: 'white'}} fontSize='16px' as={Button} rightIcon={<TfiMoreAlt fontSize='20px' /> } >More 
-                <MenuList color='#000000' bg='#ffffff' border='1px solid red' borderRadius='12px'>
-                    <MenuItem border='none' p='5px 10px' color='#000000' bg='#ffffff' as={Button} cursor='pointer' _hover={{bg: '#00000'}}>Add a Place</MenuItem>
-                    <MenuItem>Airlines</MenuItem>
-                    <MenuItem>Car Hire</MenuItem>
-                    <MenuItem>Flights</MenuItem>
-                    <MenuItem>Cruises</MenuItem>
-                    <MenuItem>Help Centre</MenuItem>
-                    <MenuItem>Package Holidays</MenuItem>
-                    <MenuItem>Travel Forums</MenuItem>
-                    <MenuItem>Travells' Choice</MenuItem>
-                </MenuList>
+                <MenuButton display='flex' justifyContent='space-between' border='1px solid black' bg='#ffffff' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' textAlign='left' _hover={{ bg: '#000000', color: 'white'}} _expanded={{ bg: '#000000', color: 'white' }} fontSize='16px' as={Button} rightIcon={<TfiMoreAlt fontSize='20px' /> } >More 
+                  <MenuList color='#000000' bg='#ffffff' borderRadius='10px' boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px' p='20px'>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Add a Place</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Airlines</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Car Hire</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Flights</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Cruises</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Help Centre</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Package Holidays</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Travel Forums</MenuItem>
+                      <MenuItem border='none' color='#000000' bg='#ffffff' p='10px 15px' mb='5px' textAlign='left' fontSize='16px'>Travells' Choice</MenuItem>
+                  </MenuList>
                 </MenuButton>
             </Menu>
         </Flex>
