@@ -1,11 +1,12 @@
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import BasicUsage from "./LoginModal";
+import LoginForm from "./LoginForm";
 
 const Login = () => {
   return (
-    <div>
-      <BasicUsage />
-    </div>
+    <Box>
+      <LoginForm />
+    </Box>
   );
 };
 

@@ -1,6 +1,6 @@
 import {
+  Box,
   Button,
-  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -8,24 +8,25 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import Logo from "./TravelGo.png";
-function BasicUsage() {
+
+function SignupModal() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
+      <Box>
+        <Text onClick={onOpen}>Join</Text>
+      </Box>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <Image />
-          </ModalBody>
-            <Image src={Logo}/>
+          <ModalBody>ABCD</ModalBody>
+
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
@@ -37,4 +38,4 @@ function BasicUsage() {
     </>
   );
 }
-export default BasicUsage;
+export default SignupModal;
