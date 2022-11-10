@@ -6,7 +6,6 @@ const Login = () => {
   return (
     <Box minH={"700px"}>
       <LoginForm />
-      
     </Box>
   );
 };
