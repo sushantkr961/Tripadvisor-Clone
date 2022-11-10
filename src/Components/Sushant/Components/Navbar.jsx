@@ -9,7 +9,7 @@ import { IoIosBed, IoIosRestaurant } from 'react-icons/io';
 import { MdHolidayVillage } from 'react-icons/md';
 import { RiTodoFill } from 'react-icons/ri';
 import { BiGlobe } from 'react-icons/bi';
-import { TfiMoreAlt } from 'react-icons/tfi'
+import { TfiMoreAlt } from 'react-icons/tfi';
 
 
 const Navbar = () => {
@@ -20,11 +20,11 @@ const Navbar = () => {
                 <Img src={logo} width='200px' height='60px' />
             </Box>
             <Flex gap='15px' alignItems='center' fontWeight='bold' >
-                <Box display='flex' cursor='pointer' ml='10px'><TbPencil fontSize='20px' /> Review</Box>
-                <Box display='flex' cursor='pointer' ml='10px'><FiHeart fontSize='20px' /> Trips</Box>
-                <Box display='flex' cursor='pointer' ml='10px'><AiOutlineBell fontSize='20px' /> Alerts</Box>
+                <Box display='flex' cursor='pointer' ml='10px' p='10px 15px' border='none' borderRadius='15px' _hover={{bg: '#e3f0e3'}}><TbPencil fontSize='20px' /> Review</Box>
+                <Box display='flex' cursor='pointer' ml='10px' p='10px 15px' border='none' borderRadius='15px' _hover={{bg: '#e3f0e3'}}><FiHeart fontSize='20px' /> Trips</Box>
+                <Box display='flex' cursor='pointer' ml='10px' p='10px 15px' border='none' borderRadius='15px' _hover={{bg: '#e3f0e3'}}><AiOutlineBell fontSize='20px' /> Alerts</Box>
                 <Button p='10px 15px' border='none' borderRadius='15px' cursor='pointer' bg='#000000' color='#FFFFFF' fontWeight='bold' >Sign in</Button>
-                <Box display='flex' cursor='pointer' ml='10px'><BsCart3 fontSize='20px' /> Basket</Box>
+                <Box display='flex' cursor='pointer' ml='10px' p='10px 15px' border='none' borderRadius='15px' _hover={{bg: '#e3f0e3'}}><BsCart3 fontSize='20px' /> Basket</Box>
             </Flex>
         </Flex>
         <Flex fontSize='16px' gap='15px' margin='auto'>
@@ -36,11 +36,15 @@ const Navbar = () => {
           <Menu>
             <MenuButton display='flex' justifyContent='space-between' border='1px solid black' bg='#ffffff' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' textAlign='left' _hover={{ bg: '#000000', color: 'white'}} fontSize='16px' as={Button} rightIcon={<TfiMoreAlt fontSize='20px' /> } >More 
               <MenuList color='#000000' bg='#ffffff' border='1px solid red' borderRadius='12px'>
-                <MenuItem border='none' p='5px 10px' color='#000000' bg='#ffffff' as={Button} cursor='pointer' _hover={{bg: '#00000'}}>Download</MenuItem>
-                <MenuItem>Create a Copy</MenuItem>
-                <MenuItem>Mark as Draft</MenuItem>
-                <MenuItem>Delete</MenuItem>
-                <MenuItem>Attend a Workshop</MenuItem>
+                <MenuItem border='none' p='5px 10px' color='#000000' bg='#ffffff' as={Button} cursor='pointer' _hover={{bg: '#00000'}}>Add a Place</MenuItem>
+                <MenuItem>Airlines</MenuItem>
+                <MenuItem>Car Hire</MenuItem>
+                <MenuItem>Flights</MenuItem>
+                <MenuItem>Cruises</MenuItem>
+                <MenuItem>Help Centre</MenuItem>
+                <MenuItem>Package Holidays</MenuItem>
+                <MenuItem>Travel Forums</MenuItem>
+                <MenuItem>Travells' Choice</MenuItem>
               </MenuList>
             </MenuButton>
           </Menu>
