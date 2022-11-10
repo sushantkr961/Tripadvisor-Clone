@@ -2,16 +2,15 @@ import React from "react";
 import {
   Box,
   Button,
-  Flex,
   FormControl,
   FormLabel,
   Image,
   Input,
-  Stack,
   Text,
 } from "@chakra-ui/react";
 import Logo from "./TravelGo.png";
 import SignupModal from "./SignupModal";
+import PasswordInput from "./MyComponents/PasswordInput";
 const LoginForm = () => {
   return (
     <Box>
@@ -22,33 +21,40 @@ const LoginForm = () => {
       <Text fontSize={"md"}>
         Please Login/Register using your Email/Mobile to continue
       </Text>
-      <FormControl
-        w={{ base: "95%", lg: "50%" }}
-        m={"auto"}
-        boxShadow="xs"
-        p="6"
-        rounded="md"
-        bg="white"
-      >
-        <FormLabel>Email</FormLabel>
-        <Input type="email" />
-        <FormLabel>Password</FormLabel>
-        <Input type="password" />
-        <Button
-          _hover={{
-            background: "rgb(247, 247, 249)",
-            color: "black",
-          }}
-          rounded={"full"}
-          w={"full"}
-          mt={4}
-          color="white"
-          bg="black"
-          type="submit"
+      <form>
+        <FormControl
+          w={{ base: "95%", lg: "50%" }}
+          m={"auto"}
+          mt={5}
+          boxShadow="xs"
+          p="6"
+          rounded="md"
+          bg="white"
         >
-          Sign In
-        </Button>
-      </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Email</FormLabel>
+            <Input type="email" />
+          </FormControl>
+          <FormControl isRequired>
+            <FormLabel>Password</FormLabel>
+            <PasswordInput />
+          </FormControl>
+          <Button
+            _hover={{
+              background: "rgb(247, 247, 249)",
+              color: "black",
+            }}
+            rounded={"full"}
+            w={"full"}
+            mt={4}
+            color="white"
+            bg="black"
+            type="submit"
+          >
+            Sign In
+          </Button>
+        </FormControl>
+      </form>
       <Box>
         <SignupModal />
       </Box>

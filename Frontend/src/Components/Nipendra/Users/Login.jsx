@@ -4,8 +4,9 @@ import LoginForm from "./LoginForm";
 
 const Login = () => {
   return (
-    <Box>
+    <Box minH={"700px"}>
       <LoginForm />
+      
     </Box>
   );
 };
