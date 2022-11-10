@@ -1,4 +1,6 @@
 import {
+  Alert,
+  AlertIcon,
   Box,
   Button,
   Checkbox,
@@ -17,18 +19,30 @@ import {
   ModalOverlay,
   Stack,
   Text,
+  useToast,
   useDisclosure,
 } from "@chakra-ui/react";
 
 import React from "react";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import signup from "../../../Redux/Users/Signup/signup.action";
 import SocialLogin from "./MyComponents/SocialLogin";
 
 function SignupModal() {
   const dispatch = useDispatch();
+  const toast = useToast();
+  // const state = useSelector((store) => store.signup.initialState);
+  // const { isLoading, isSignUp, isError, emailExists } = useSelector(
+  //   (store) => store.signup.initialState
+  // );
+  const { isLoading, isSignUp, isError, emailExists } = useSelector(
+    (store) => store.signup
+  );
+
+  const navigate = useNavigate();
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   const [user, setUser] = useState({
@@ -49,7 +63,37 @@ function SignupModal() {
     if (user.firstName && user.lastName && user.email && user.password) {
       dispatch(signup(user));
     }
+
+    console.log(emailExists, "EMAIL HAI");
+    console.log(isSignUp, "SIGNUP HOGAY");
+
+    setUser({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+    });
+    
   };
+  const handleToast = ()=>{
+    if (isSignUp === true) {
+      toast({
+        title: "Account Created Successfully",
+        description: "Login to continue.",
+        status: "success",
+        position: "bottom",
+        isClosable: true,
+      });
+    }
+    if (emailExists === true) {
+      toast({
+        title: "Already have an account",
+        status: "error",
+        position: "bottom",
+        isClosable: true,
+      });
+    }
+  }
 
   return (
     <Box w={{ base: "95%", lg: "50%" }} m={"auto"} mt={4}>
@@ -69,12 +113,26 @@ function SignupModal() {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
+            {/* {emailExists ? (
+              <Alert borderRadius={"full"} status="warning">
+                <AlertIcon />
+                <Text>
+                  Seems you already have an account. Please{" "}
+                  <Link as={"b"} onClick={onClose}>
+                    Login
+                  </Link>{" "}
+                  to continue
+                </Text>
+              </Alert>
+            ) : null} */}
+
             <form onSubmit={handleSubmit}>
               <FormControl isRequired>
                 <Stack direction={"row"}>
                   <FormControl isRequired>
                     <FormLabel>First Name</FormLabel>
                     <Input
+                      placeholder={"Enter First Name"}
                       onChange={handleChange}
                       type="text"
                       name="firstName"
@@ -85,6 +143,7 @@ function SignupModal() {
                   <FormControl isRequired>
                     <FormLabel>Last Name</FormLabel>
                     <Input
+                      placeholder={"Enter Last Name"}
                       onChange={handleChange}
                       name="lastName"
                       value={user.lastName}
@@ -96,6 +155,7 @@ function SignupModal() {
                 <FormControl isRequired>
                   <FormLabel>Email</FormLabel>
                   <Input
+                    placeholder={"Enter Email"}
                     onChange={handleChange}
                     name="email"
                     value={user.email}
@@ -131,6 +191,7 @@ function SignupModal() {
                   time.
                 </Checkbox>
                 <Button
+                  isLoading={isLoading}
                   _hover={{
                     background: "rgb(247, 247, 249)",
                     color: "black",
@@ -141,6 +202,7 @@ function SignupModal() {
                   color="white"
                   bg="black"
                   type="submit"
+                  onClick={handleToast}
                 >
                   Join
                 </Button>
