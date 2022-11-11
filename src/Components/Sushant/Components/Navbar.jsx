@@ -9,7 +9,7 @@ import { BsCart3 } from 'react-icons/bs';
 
 const Navbar = () => {
   return (
-    <Box borderBottom='1px solid gray' position='sticky' top='0' bg='white' >
+    <Box borderBottom='1px solid gray' position='sticky' top='0' bg='white'>
       <Box w='63%' margin='auto'>
           <Flex justify='space-between' alignItems='center'>
               <Box>

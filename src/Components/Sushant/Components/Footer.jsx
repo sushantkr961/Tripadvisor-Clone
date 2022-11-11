@@ -1,6 +1,8 @@
 import { Box, Flex, Img, Link, Text } from '@chakra-ui/react'
 import React from 'react'
-
+import { IoLogoTwitter } from 'react-icons/io';
+import { FaFacebook, FaInstagram, FaPinterest } from 'react-icons/fa';
+import logo from '../assests/Website_Logo.png';
 
 const Footer = () => {
     let style = {
@@ -51,15 +53,16 @@ const Footer = () => {
             </Box>
         </Flex>
         <Box w='65%' margin='auto'>
-            <Img src='https://static.tacdn.com/img2/brand_refresh/Tripadvisor_logoset_solid_green.svg' />
-            <Box>
+            <Img src={logo} w={100} />
+            <Box fontSize='12px' w='75%' m='auto'>
                 <Text>© 2022 Tripadvisor LLC All rights reserved.</Text>
                 <Text>This is the version of our website addressed to speakers of English in India. If you are a resident of another country or region, please select the appropriate version of Tripadvisor for your country or region in the drop-down menu. more</Text>
             </Box>
-            <Box>
-                <Img src='' alt='facebook' />
-                <Img src='' alt='twitter' />
-                <Img src='' alt='Instagram' />
+            <Box display='flex' gap='5px' w='100px' m='auto'>
+                <Link href=''><FaFacebook color='#000000' fontSize='20px' /></Link>
+                <Link href=''><IoLogoTwitter color='#000000' fontSize='20px' /></Link>
+                <Link href=''><FaPinterest color='#000000' fontSize='20px' /></Link>
+                <Link href=''><FaInstagram color='#000000' fontSize='20px' /></Link>
             </Box>
         </Box>
     </Box>
