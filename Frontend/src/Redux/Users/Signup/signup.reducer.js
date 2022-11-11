@@ -9,7 +9,7 @@ const initialState = {
   isSignUp: false,
   isLoading: false,
   isError: false,
-  emailExists: false,
+  errorMessage: "",
 };
 
 function signupReducer(state = initialState, action) {
@@ -24,9 +24,8 @@ function signupReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: false,
-        emailExists: false,
         isSignUp: true,
-        
+        errorMessage: action.payload,
       };
     }
 
@@ -34,6 +33,7 @@ function signupReducer(state = initialState, action) {
       return {
         ...state,
         isError: true,
+        isLoading: false,
       };
     }
     case SIGN_UP_EXISTS: {
@@ -41,7 +41,7 @@ function signupReducer(state = initialState, action) {
         ...state,
         isSignUp: false,
         isLoading: false,
-        emailExists: true,
+        errorMessage: action.payload,
       };
     }
     default: {
