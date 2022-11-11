@@ -1,16 +1,10 @@
 import {
-  Alert,
-  AlertIcon,
   Box,
   Button,
   Checkbox,
-  Divider,
   FormControl,
   FormLabel,
   Input,
-  InputGroup,
-  InputRightElement,
-  Link,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -18,33 +12,23 @@ import {
   ModalHeader,
   ModalOverlay,
   Stack,
-  Text,
   useToast,
   useDisclosure,
 } from "@chakra-ui/react";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import signup from "../../../Redux/Users/Signup/signup.action";
+import PasswordInput from "./MyComponents/PasswordInput";
+import SignupButton from "./MyComponents/SignupButton";
+import SignupFooter from "./MyComponents/SignupFooter";
 import SocialLogin from "./MyComponents/SocialLogin";
 
 function SignupModal() {
   const dispatch = useDispatch();
   const toast = useToast();
-  // const state = useSelector((store) => store.signup.initialState);
-  // const { isLoading, isSignUp, isError, emailExists } = useSelector(
-  //   (store) => store.signup.initialState
-  // );
-  const { isLoading, isSignUp, isError, emailExists } = useSelector(
-    (store) => store.signup
-  );
-
-  const navigate = useNavigate();
-  const [show, setShow] = React.useState(false);
-  const handleClick = () => setShow(!show);
+  const [count, setCount] = useState(0);
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -52,7 +36,9 @@ function SignupModal() {
     password: "",
   });
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const { isLoading, isSignUp, errorMessage } = useSelector(
+    (store) => store.signup
+  );
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
@@ -63,20 +49,36 @@ function SignupModal() {
     if (user.firstName && user.lastName && user.email && user.password) {
       dispatch(signup(user));
     }
-
-    console.log(emailExists, "EMAIL HAI");
-    console.log(isSignUp, "SIGNUP HOGAY");
-
     setUser({
       firstName: "",
       lastName: "",
       email: "",
       password: "",
     });
-    
   };
-  const handleToast = ()=>{
-    if (isSignUp === true) {
+  const handleToast = () => {
+    if (
+      errorMessage.status === 402 &&
+      !errorMessage.idToken &&
+      !isSignUp &&
+      count === 0
+    ) {
+      toast({
+        title: "Already have an account",
+        status: "error",
+        position: "bottom",
+        isClosable: true,
+      });
+      setCount((prev) => prev + 1);
+
+      return;
+    }
+    if (
+      errorMessage.idToken &&
+      errorMessage.status !== 402 &&
+      isSignUp &&
+      count === 0
+    ) {
       toast({
         title: "Account Created Successfully",
         description: "Login to continue.",
@@ -84,27 +86,17 @@ function SignupModal() {
         position: "bottom",
         isClosable: true,
       });
+      setCount((prev) => prev + 1);
+      return;
     }
-    if (emailExists === true) {
-      toast({
-        title: "Already have an account",
-        status: "error",
-        position: "bottom",
-        isClosable: true,
-      });
-    }
-  }
+  };
+  useEffect(() => {
+    handleToast();
+  }, [errorMessage]);
 
   return (
     <Box w={{ base: "95%", lg: "50%" }} m={"auto"} mt={4}>
-      <Box fontSize={"md"}>
-        <Text>New to TravelGo</Text>
-        <Link fontSize={"md"} onClick={onOpen} as="b" color="black">
-          Join Now
-        </Link>{" "}
-        to unlock the best of TravelGo!
-      </Box>
-      <Divider mt={3} />
+      <SignupButton onOpen={onOpen} />
       <Modal size={"3xl"} isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -113,19 +105,6 @@ function SignupModal() {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {/* {emailExists ? (
-              <Alert borderRadius={"full"} status="warning">
-                <AlertIcon />
-                <Text>
-                  Seems you already have an account. Please{" "}
-                  <Link as={"b"} onClick={onClose}>
-                    Login
-                  </Link>{" "}
-                  to continue
-                </Text>
-              </Alert>
-            ) : null} */}
-
             <form onSubmit={handleSubmit}>
               <FormControl isRequired>
                 <Stack direction={"row"}>
@@ -165,28 +144,13 @@ function SignupModal() {
 
                 <FormControl isRequired>
                   <FormLabel>Password</FormLabel>
-                  <InputGroup size="md">
-                    <Input
-                      onChange={handleChange}
-                      name="password"
-                      value={user.password}
-                      pr="4.5rem"
-                      type={show ? "text" : "password"}
-                      placeholder="Enter password"
-                    />
-                    <InputRightElement width="4.5rem">
-                      <Button
-                        rounded="full"
-                        h="1.75rem"
-                        size="sm"
-                        onClick={handleClick}
-                      >
-                        {show ? <AiFillEyeInvisible /> : <AiFillEye />}
-                      </Button>
-                    </InputRightElement>
-                  </InputGroup>
+                  <PasswordInput
+                    name={"password"}
+                    value={user.password}
+                    onChange={handleChange}
+                  />
                 </FormControl>
-                <Checkbox mt={6} defaultChecked>
+                <Checkbox mt={6}>
                   Yes, inform me on deals & new features. I can opt out at any
                   time.
                 </Checkbox>
@@ -208,19 +172,8 @@ function SignupModal() {
                 </Button>
               </FormControl>
             </form>
-            <Stack mt={6} textAlign="center">
-              <Text>Already a Member</Text>
-              <Text>
-                <Link as={"b"} onClick={onClose}>
-                  Login{" "}
-                </Link>
-                using TravelGo account
-              </Text>
-            </Stack>
+            <SignupFooter onClose={onClose} />
           </ModalBody>
-          {/* <ModalFooter>
-            
-          </ModalFooter> */}
         </ModalContent>
       </Modal>
       <SocialLogin />
