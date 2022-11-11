@@ -10,7 +10,7 @@ const Navbar2 = () => {
   return (
     <Box w='62%' margin='auto' mt='30px'>
         <Flex fontSize='16px' gap='15px' margin='auto'>
-            <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}}>Hotels <IoIosBed fontSize='20px' /> </Box>
+            <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}} >Hotels <IoIosBed fontSize='20px' /> </Box>
             <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}}>Holiday Homes <MdHolidayVillage fontSize='20px' /> </Box>
             <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}}>Things to Do <RiTodoFill fontSize='20px' /> </Box>
             <Box display='flex' justifyContent='space-between' border='1px solid black' p='15px 15px' w='150px' borderRadius='12px' cursor='pointer' alignItems='center' _hover={{ bg: '#000000', color: 'white'}}>Restaurants <IoIosRestaurant fontSize='20px' /> </Box>
