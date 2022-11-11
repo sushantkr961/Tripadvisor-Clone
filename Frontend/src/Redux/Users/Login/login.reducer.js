@@ -27,7 +27,7 @@ function loginReducer(state = initialState, action) {
     }
     case LOGIN_SUCCESS: {
       localStorage.setItem("token", action.payload);
-
+      console.log(action.payload);
       return {
         ...initialState,
         isAuth: true,
