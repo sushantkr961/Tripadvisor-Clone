@@ -14,7 +14,7 @@ const Temple = () => {
       ];
 
   return (
-    <Box mb='50px'>
+    <Box mb='100px'>
         <Box w='65%' margin='auto' mt='50px' mb='70px'>
             <Box w='89%' margin='auto'  mb='10px'>
                 <Text textAlign='left' fontSize='24px' fontWeight='bold'>Most Popular Temples to visit in India</Text>
