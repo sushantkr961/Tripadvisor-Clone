@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <AllRoutes />
-      {/* <HotelListG/> */}
-      <SingleRestaurant/>
+        <HotelListG/>
+      {/* <SingleRestaurant/>   */}
     </div>
   );
 }

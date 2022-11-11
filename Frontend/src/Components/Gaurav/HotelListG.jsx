@@ -23,11 +23,15 @@ import Card from "./Card";
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'af4758d1c5msh4645d20fb50f9a0p1954bbjsn84321fedaf30',
+		'X-RapidAPI-Key': 'af3366808dmshd45570fd8fdedb7p1db0fcjsn98d47937d773',
 		'X-RapidAPI-Host': 'hotels-com-provider.p.rapidapi.com'
 	}
 };
 
+const onAdd=(e)=>{
+console.log(e)
+localStorage.setItem("book",JSON.stringify(e))
+}
 
 
 export const HotelListG=()=>{
@@ -59,19 +63,32 @@ console.log(state)
  
         {state?.map((e)=>{
 
-            return   <Box    h='240px' boxShadow='dark-lg' p='6' w="75%" m="auto" rounded='md' bg='white' overflow="hidden" display={"flex"} >
+            return   <Box      h='240px' boxShadow='dark-lg' p='6' w="75%" m="auto" rounded='md' bg='white' overflow="hidden" display={"flex"} >
             <Box mr={10}  boxShadow='dark-lg'  borderRightRadius="00 ">
                 <Image  w="100%" h="100%" src={e.optimizedThumbUrls.srpDesktop} alt=""  />
             </Box> 
-            <Container borderRightRadius="1200" boxShadow='dark-lg' color={"white"} fontSize={"lg"} backgroundImage="url('https://media.tenor.com/4jDkHe9fEWAAAAAC/background.gif')"
-            backgroundPosition="center"
-            backgroundRepeat=" repeat"  p="5">
-              <Text   fontSize={"xl"}>{e.name}</Text>
-              <Text>Country : {e.address?.countryName}</Text><Text>{e.address?.locality?.countryName}</Text>
-              <Text>StreetAddress : {e.address?.streetAddress}</Text>
-              <Text>Rating : {e.starRating}</Text>
-              <Text>Price :  {e.ratePlan?.price?.exactCurrent}</Text>
-            
+   
+            <Container fontStyle={"italic"} borderRightRadius="1200" boxShadow='dark-lg' color={"black"} fontSize={{
+  xs:"10px" ,
+  sm: '10px',
+  md: '15px',
+  lg: 'lg',
+  xl: 'lg',
+  '2xl': 'lg',
+}}    p="5">
+              <Text color={"pink.800"}  fontSize={{
+  xs:"10px" ,
+  sm: '10px',
+  md: '15px',
+  lg: 'lg',
+  xl: '2xl ',
+  '2xl': '2xl ',
+}}>{e.name}</Text>
+              <Text textAlign={"left"} >Country : {e.address?.countryName}</Text><Text>{e.address?.locality?.countryName}</Text>
+              <Text textAlign={"left"}>StreetAddress : {e.address?.streetAddress}</Text>
+              <Text textAlign={"left"}>Rating : {e.starRating}</Text>
+              <Text>Price : $ {e.ratePlan?.price?.exactCurrent}</Text>
+            <Button color={"black"} onClick={()=>onAdd(e)} bg="pink">Reserve</Button>
             </Container>
           </Box>
 
