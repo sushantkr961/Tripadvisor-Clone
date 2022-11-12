@@ -50,7 +50,6 @@ const LoginForm = () => {
 
   return (
     <Box>
-      <Image w={150} src={Logo} />
       <Text fontSize="4xl" as="b">
         Welcome to TravelGo!
       </Text>
