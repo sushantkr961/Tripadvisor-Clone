@@ -1,0 +1,29 @@
+.page1{
+    width: 60%;
+    /* border: 2px solid red;  */
+    margin: auto;
+    padding: 40px;
+    padding-bottom: 0px;
+   
+    
+}
+
+.ReviewOrderDetails{
+    /* border: 2px solid red; */
+    width: 50%; 
+    padding: 10px;
+    gap:10px;
+    padding-top: 0px;
+}
+
+.box1{
+    display: flex;
+}
+.smbox{
+    border: 1px solid black;
+    border-radius: 5px;
+    /* height: 48%; */
+    padding: 10px;
+    margin-top: 10px;
+}
+

@@ -5,9 +5,22 @@ import { TbPencil } from "react-icons/tb";
 import { FiHeart } from "react-icons/fi";
 import { AiOutlineBell } from "react-icons/ai";
 import { BsCart3 } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../../Redux/Users/Login/login.action";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { isAuth } = useSelector((store) => store.login);
+  const handleAuth = () => {
+    if (isAuth) {
+      navigate("/");
+      dispatch(logout());
+    } else {
+      navigate("/login");
+    }
+  };
   return (
     <Box
       position={{ md: "static", lg: "sticky" }}
@@ -18,7 +31,9 @@ const Navbar = () => {
       <Box w="63%" margin="auto">
         <Flex justify="space-between" alignItems="center">
           <Box>
-            <Img src={logo} mt={3} w={"100%"} height="60px" />
+            <Link to={"/"}>
+              <Img src={logo} mt={3} w={"100%"} height="60px" />
+            </Link>
           </Box>
           <Flex gap="15px" alignItems="center" fontWeight="bold">
             <Box
@@ -58,6 +73,7 @@ const Navbar = () => {
             </Hide>
             <Link to="/login">
               <Button
+                onClick={handleAuth}
                 p="10px 15px"
                 border="none"
                 borderRadius="15px"
@@ -67,7 +83,7 @@ const Navbar = () => {
                 fontWeight="bold"
                 _hover={{ bg: "#545454" }}
               >
-                Sign in
+                {isAuth ? "Log Out" : "Sign In"}
               </Button>
             </Link>
             <Box

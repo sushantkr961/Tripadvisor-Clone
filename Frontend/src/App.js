@@ -1,6 +1,7 @@
 import "./App.css";
 import AllRoutes from "./AllRoutes/AllRoutes";
 import Navbar from "./Components/Sushant/Components/Navbar";
+import Footer from "./Components/Sushant/Components/Footer";
 
 function App() {
   // const options = {
@@ -39,6 +40,7 @@ function App() {
     <div className="App">
       <Navbar />
       <AllRoutes />
+      <Footer />
     </div>
   );
 }

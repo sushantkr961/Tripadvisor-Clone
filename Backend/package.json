@@ -1,28 +1,27 @@
 {
-  "name": "backend_users",
+  "name": "heroku-rsoni2843",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "12.11.1",
-    "npm": "6.14.12"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rsoni2843/heroku-rsoni2843.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rsoni2843/heroku-rsoni2843/issues"
+  },
+  "homepage": "https://github.com/rsoni2843/heroku-rsoni2843#readme",
   "dependencies": {
-    "body-parser": "^1.20.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^6.7.2",
     "rand-token": "^1.0.1"
-  },
-  "devDependencies": {
-    "dotenv": "^16.0.3",
-    "nodemon": "^2.0.20"
   }
 }

@@ -1,0 +1,34 @@
+
+
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "af3366808dmshd45570fd8fdedb7p1db0fcjsn98d47937d773",
+    "X-RapidAPI-Host": "hotels-com-provider.p.rapidapi.com",
+  },
+};
+
+// const onAdd = (e) => {
+//   console.log(e);
+//   localStorage.setItem("book", JSON.stringify(e));
+// };
+
+
+
+const getdata = () => {
+    fetch(
+      "https://hotels-com-provider.p.rapidapi.com/v1/hotels/nearby?latitude=51.509865&currency=USD&longitude=-0.118092&checkout_date=2022-11-27&sort_order=STAR_RATING_HIGHEST_FIRST&checkin_date=2022-11-26&adults_number=1&locale=en_US&guest_rating_min=4&star_rating_ids=3%2C4%2C5&children_ages=4%2C0%2C15&page_number=1&price_min=10&accommodation_ids=20%2C8%2C15%2C5%2C1&theme_ids=14%2C27%2C25&price_max=500&amenity_ids=527%2C2063",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        setState(response.searchResults.results);
+      })
+      .catch((err) => console.error(err));
+  };
+
+  useEffect(() => {
+    getdata();
+  }, []);
+  console.log(state);

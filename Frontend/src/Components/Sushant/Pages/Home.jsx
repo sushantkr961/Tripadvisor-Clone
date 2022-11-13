@@ -1,10 +1,9 @@
-import React from 'react'
-import Explore from '../Components/Explore';
-import Footer from '../Components/Footer';
-import IndiaTour from '../Components/IndiaTour';
-import Navbar2 from '../Components/Navbar2';
-import Searchbar from '../Components/Searchbar';
-import Temple from '../Components/Temple';
+import React from "react";
+import Explore from "../Components/Explore";
+import IndiaTour from "../Components/IndiaTour";
+import Navbar2 from "../Components/Navbar2";
+import Searchbar from "../Components/Searchbar";
+import Temple from "../Components/Temple";
 
 const Home = () => {
   return (
@@ -14,9 +13,8 @@ const Home = () => {
       <IndiaTour />
       <Explore />
       <Temple />
-      <Footer />
     </>
-  )
-}
+  );
+};
 
 export default Home;

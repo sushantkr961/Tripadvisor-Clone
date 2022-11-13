@@ -1,0 +1,16 @@
+.searchBox {
+  background: white;
+  border-radius: 50px;
+  font-weight: bold;
+}
+.searchBox input {
+  background: white;
+  border-radius: 50px;
+}
+.searchBox button {
+  border-radius: 50%;
+}
+.suggestionBox {
+  background: white;
+  
+}
