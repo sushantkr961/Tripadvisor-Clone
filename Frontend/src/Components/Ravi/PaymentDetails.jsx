@@ -98,7 +98,7 @@ function PaymentDetails() {
               </FormControl>
 
               <FormControl isRequired>
-                <FormLabel fontSize={"10px"}>Postal/Zip Code</FormLabel>
+                <FormLabel fontSize={"10px"}>Postal/ZipCode</FormLabel>
                 <Input size="xs" />
               </FormControl>
             </SimpleGrid>
