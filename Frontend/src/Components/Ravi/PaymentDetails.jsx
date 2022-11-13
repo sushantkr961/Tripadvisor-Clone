@@ -11,6 +11,7 @@ import {
   FormControl,
   FormLabel,
   InputLeftAddon,
+  Link,
   InputGroup,
   Button,
 } from "@chakra-ui/react";
@@ -101,15 +102,16 @@ function PaymentDetails() {
                 <Input size="xs" />
               </FormControl>
             </SimpleGrid>
-
-            <Button
-              colorScheme="red"
-              marginTop={"30px"}
-              width={"90%"}
-              onClick={handleForm}
-            >
-              Next
-            </Button>
+            <Link href="/">
+              <Button
+                colorScheme="red"
+                marginTop={"30px"}
+                width={"90%"}
+                onClick={handleForm}
+              >
+                Next
+              </Button>
+            </Link>
           </form>
         </div>
         <div className="ReviewOrderDetails">

@@ -151,7 +151,7 @@ export const SingleRestaurant = () => {
             </UnorderedList>
           </Box>
         </Box>
-        <Link to="">
+        <Link to="/traveller">
           <Button colorScheme="pink">Book Now</Button>
         </Link>
       </SimpleGrid>
