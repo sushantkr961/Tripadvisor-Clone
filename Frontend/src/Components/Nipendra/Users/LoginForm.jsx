@@ -42,7 +42,7 @@ const LoginForm = () => {
   };
   useEffect(() => {
     if (isAuth) {
-      navigate("/check");
+      navigate("/");
     } else {
       navigate("/login");
     }
