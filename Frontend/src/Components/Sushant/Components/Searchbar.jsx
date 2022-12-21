@@ -46,12 +46,13 @@ const Searchbar = () => {
   return (
     <>
       <Box
-        w="62%"
+        w={{sm:"100%", md:"75%", lg:'62%'}}
         margin="auto"
         mt="30px"
         h="340px"
-        bgImage={img}
+        bgImg={img}
         bgRepeat="no-repeat"
+        backgroundSize="cover"
         mb="50px"
         display="flex"
         align="center"

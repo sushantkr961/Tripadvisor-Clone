@@ -13,7 +13,7 @@ const IndiaTour = () => {
   ];
 
   return (
-    <Box w='65%' margin='auto' mt='30px'>
+    <Box w={{sm:"100%", md:"90%", lg:'71%'}} margin='auto' mt='30px'>
       <Box w='89%' margin='auto'  mb='10px'>
         <Text textAlign='left' fontSize='24px' fontWeight='bold'>Ways to tour India</Text>
       </Box>
@@ -30,10 +30,10 @@ const IndiaTour = () => {
           <Card src='https://th.bing.com/th/id/OIP.0keeTk6pZmb4v5z5jHZ9NQHaEJ?w=300&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7' name='Uttar Pradesh' />
         </Carousel>
       </Box>
-      <Box bg='#faf1ed' h='200px' display='flex' justifyContent='space-between' mt='50px' cursor='pointer'>
+      <Box bg='#faf1ed' display='flex' justifyContent='space-between' mt='50px' cursor='pointer' height={{sm: '200px'}}>
         <Box width='65%' textAlign='left' p='20px'>
           <Text fontSize='24px' fontWeight='bold'>Get out there</Text>
-          <Text mt='-10px'>Best of the best tours, attractions and activites you won't want to miss.</Text>
+          <Text mb='10px'>Best of the best tours, attractions and activites you won't want to miss.</Text>
           <Button p='10px 15px' border='none' borderRadius='15px' cursor='pointer' bg='#000000' color='#FFFFFF' fontWeight='bold' _hover={{bg: '#545454'}}>See the list</Button>
         </Box>
         <Box>
