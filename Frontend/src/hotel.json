@@ -3017,5 +3017,179 @@
       "url": "/holiday-home/19620665-holiday-villas-in-goa/",
       "currency": "NOK"
     }
+  ],
+  "signupData": [
+    {
+      "selectValue": "91",
+      "phone": "8526356066",
+      "email": "abc@gmail.com",
+      "password": "Abc@123",
+      "firstName": "Ashish",
+      "lastName": "Kumar",
+      "id": 1
+    },
+    {
+      "selectValue": "91",
+      "phone": "9161610139",
+      "email": "ashishchaudhary3639@gmail.com",
+      "password": "Ashish@123",
+      "firstName": "Ashish",
+      "lastName": "Chaudhary",
+      "id": 2
+    },
+    {
+      "selectValue": "91",
+      "phone": "9181818881",
+      "email": "bhaskarchaudhary3639@gmail.com",
+      "password": "Bhaskar@123",
+      "firstName": "Bhaskar",
+      "lastName": "Chaudhary",
+      "id": 3
+    },
+    {
+      "selectValue": "91",
+      "phone": "8528356066",
+      "email": "abcd@gmail.com",
+      "password": "Abc@123",
+      "firstName": "AK",
+      "lastName": "Chaudhary",
+      "id": 4
+    },
+    {
+      "selectValue": "91",
+      "phone": "9191999191",
+      "email": "abc@123",
+      "password": "Abc@123",
+      "firstName": "Pintu",
+      "lastName": "Kumar",
+      "id": 5
+    },
+    {
+      "selectValue": "91",
+      "phone": "9121212121",
+      "email": "ashishchaudhary@gmail.com",
+      "password": "Ashish@123",
+      "firstName": "Ashish",
+      "lastName": "Kumar",
+      "id": 6
+    },
+    {
+      "selectValue": "91",
+      "phone": "9876543210",
+      "email": "ABCabc@gmail.com",
+      "password": "asdfasdf",
+      "firstName": "sadf",
+      "lastName": "asdf",
+      "id": 7
+    },
+    {
+      "selectValue": "91",
+      "phone": "9121212121",
+      "email": "ashishchaudhary1212@gmail.com",
+      "password": "Ashish@123",
+      "firstName": "Ashish",
+      "lastName": "Kumar",
+      "id": 8
+    }
+  ],
+  "form": [
+    {
+      "country": "American Samoa",
+      "city": "Bilaspur",
+      "id": 2,
+      "type": "Apartment",
+      "brandname": "Hill Homestay",
+      "cabinfeatures": {
+        "cabins": 1,
+        "guestsAllowed": 1,
+        "beds": 1,
+        "bathrooms": 1,
+        "facilities": ["Balcony"]
+      },
+      "cabinFacilities": {
+        "cabins": 1,
+        "guestsAllowed": 1,
+        "beds": 1,
+        "bathrooms": 1,
+        "facilities": ["Housekeeping", "Linen Provided"]
+      },
+      "images": {
+        "outer": [
+          "blob:http://localhost:3000/77d80832-f054-4b1a-9798-ac0b931c6e11",
+          "blob:http://localhost:3000/53dcb05f-d643-495c-abb3-79657aab2187",
+          "blob:http://localhost:3000/7841f7b1-94d3-42ad-9bfe-6c70ea2e9400"
+        ],
+        "inner": [
+          "blob:http://localhost:3000/2c0e9dd8-aae5-4408-b4bf-8caddbf197d0",
+          "blob:http://localhost:3000/a96d63c8-4691-4d58-8577-4d0f089e7d83",
+          "blob:http://localhost:3000/1d127577-56d4-4292-8d68-8434553a9cba"
+        ]
+      }
+    },
+    {
+      "country": "India",
+      "state": "Uttar Pradesh",
+      "city": "Siddhartha nagar",
+      "id": 3,
+      "type": "Villa",
+      "cabinFacilities": {
+        "cabins": 1,
+        "guestsAllowed": 1,
+        "beds": 1,
+        "bathrooms": 1,
+        "facilities": ["AC", "Sofa"]
+      }
+    },
+    {
+      "country": "Angola",
+      "city": "Kushair",
+      "id": 4
+    },
+    {
+      "country": "Angola",
+      "city": "Kushair",
+      "id": 5
+    },
+    {
+      "country": "Angola",
+      "city": "Kushair",
+      "id": 6
+    },
+    {
+      "country": "Andorra",
+      "city": "Kushair",
+      "state": "Les Escaldes",
+      "id": 7
+    },
+    {
+      "country": "Andorra",
+      "city": "Kushair",
+      "state": "Les Escaldes",
+      "id": 8
+    },
+    {
+      "country": "Andorra",
+      "city": "Kushair",
+      "state": "Les Escaldes",
+      "id": 9
+    },
+    {
+      "country": "Andorra",
+      "city": "Kushair",
+      "state": "Les Escaldes",
+      "id": 10
+    },
+    {
+      "country": "Andorra",
+      "city": "Kushair",
+      "state": "Les Escaldes",
+      "id": 11
+    },
+    {
+      "country": "Andorra",
+      "city": "Kushair",
+      "state": "Les Escaldes",
+      "id": 12
+    }
   ]
 }

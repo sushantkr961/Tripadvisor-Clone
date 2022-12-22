@@ -8,10 +8,10 @@ import Temple from "../Components/Temple";
 const Home = () => {
   return (
     <>
-      {/* <Searchbar />
+      <Searchbar />
       <IndiaTour />
       <Explore />
-      <Temple /> */}
+      <Temple /> 
       <HotelDetails />
     </>
   );

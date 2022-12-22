@@ -15,7 +15,7 @@ import SignupModal from "./SignupModal";
 import PasswordInput from "./MyComponents/PasswordInput";
 import login from "../../../Redux/Users/Login/login.action";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -40,13 +40,10 @@ const LoginForm = () => {
       password: "",
     });
   };
-  useEffect(() => {
-    if (isAuth) {
-      navigate("/");
-    } else {
-      navigate("/login");
-    }
-  }, [isAuth]);
+ 
+  if (isAuth) {
+    return <Navigate to={"/"} />;
+  }
 
   return (
     <Box>
