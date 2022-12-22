@@ -28,6 +28,7 @@ class AdminController {
               Message: "Admin Login Successfully",
               Token: token,
             });
+            next();
           }
           // Checking either email or password is incorrect
           else {
