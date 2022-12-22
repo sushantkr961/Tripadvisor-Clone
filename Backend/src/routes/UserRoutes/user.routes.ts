@@ -4,10 +4,12 @@ import LoginController from "../../controller/user/login.controller";
 import userPasswordReset from "../../controller/user/userPasswordReset.controller";
 import changePasswordController from "../../controller/user/changePassword.controller";
 import authMiddleware from "../../middlewares/UserMiddleware/userAuth.middleware";
+import AdminController from "../../middlewares/AdminMiddleware/admin.middleware";
 
 const router = express.Router();
 router.use("/changepassword", authMiddleware);
 router.use("/loggedUser", authMiddleware);
+// router.use("/getUsers", AdminController.adminLogin);
 
 // Public Routes
 router.get("/", (req, res) => {
@@ -22,5 +24,5 @@ router.post("/resetPassword/:id/:token", userPasswordReset.userPasswordReset);
 // Private Routes
 router.post("/changePassword", changePasswordController.changeUserPassword);
 router.get("/loggedUser", LoginController.loggedUser);
-
+router.get("/getUsers", AdminController.getAllUsers);
 export default router;
