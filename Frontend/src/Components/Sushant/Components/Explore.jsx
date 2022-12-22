@@ -7,7 +7,7 @@ export default function Explore() {
       mx={"auto"}
       pt={5}
       px={{ base: 2, sm: 12, md: 17 }}
-      w={{sm:"100%", md:"90%", lg:'71%'}}
+      w={{base:"100%", md:"90%", lg:'71%'}}
     >
       <chakra.h1
         textAlign={"left"}

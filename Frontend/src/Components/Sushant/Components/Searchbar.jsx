@@ -46,7 +46,7 @@ const Searchbar = () => {
   return (
     <>
       <Box
-        w={{sm:"100%", md:"75%", lg:'62%'}}
+        w={{base:"100%", md:"75%", lg:'62%'}}
         margin="auto"
         mt="30px"
         h="340px"

@@ -12,12 +12,13 @@ import {
 } from "@chakra-ui/icons";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { MdOutlineNotifications } from "react-icons/md";
+import { FiHeart } from "react-icons/fi";
 
 export default function WithSubnavigation() {
 
   return (
     <Flex justify='center' position={'sticky'} top="0" zIndex={'100'} bg={'#FFFFFF'}>
-      <Box w={{sm:'100%', md:"100%", lg: "65%"}}>
+      <Box w={{base:'100%', md:"100%", lg: "65%"}}>
         <Flex
           bg={useColorModeValue("white", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
@@ -45,6 +46,15 @@ export default function WithSubnavigation() {
             direction={"row"}
             spacing={6}
           >
+            <Text
+              as={"button"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+            >
+              <FiHeart fontSize={25} />
+            </Text>
             <Text
               as={"button"}
               fontSize={"sm"}
