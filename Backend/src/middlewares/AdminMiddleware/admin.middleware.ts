@@ -58,7 +58,6 @@ class AdminController {
   static getAllUsers = async (req: Request, res: Response) => {
     const allUsers = await UserModel.find();
     try {
-        
       res.status(200).send({ users: allUsers });
     } catch (err) {
       console.error;
