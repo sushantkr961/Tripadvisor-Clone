@@ -1,14 +1,11 @@
 import { NextFunction, Request, Response } from "express";
+
 import UserModel from "../../modules/User/user.model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 class AdminController {
-  static adminLogin = async (
-    req: Request,
-    res: Response,
-    next: NextFunction
-  ) => {
+  static adminLogin = async (req: Request, res: Response) => {
     try {
       const { email, password } = req.body;
       // Checking both if email & password are present
@@ -28,7 +25,6 @@ class AdminController {
               Message: "Admin Login Successfully",
               Token: token,
             });
-            next();
           }
           // Checking either email or password is incorrect
           else {
@@ -56,6 +52,7 @@ class AdminController {
       res.status(408).send({ Message: "Unable to Login" });
     }
   };
+
   static getAllUsers = async (req: Request, res: Response) => {
     const allUsers = await UserModel.find();
     try {
