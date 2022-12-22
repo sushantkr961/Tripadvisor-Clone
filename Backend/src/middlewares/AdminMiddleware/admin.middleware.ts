@@ -17,7 +17,7 @@ class AdminController {
             let token = jwt.sign(
               { userID: user?._id },
               process.env.JWT_SECRET_KEY || "",
-              { expiresIn: "5d" }
+              { expiresIn: "5day" }
             );
             res.status(200).send({
               Status: "Success",
