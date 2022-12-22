@@ -11,7 +11,7 @@ router.use("/changepassword", authMiddleware);
 router.use("/loggedUser", authMiddleware);
 // router.use("/getUsers", AdminController.adminLogin);
 
-// Public Routes
+// Public Routes;
 router.get("/", (req, res) => {
   res.send("Working User Routes");
 });
