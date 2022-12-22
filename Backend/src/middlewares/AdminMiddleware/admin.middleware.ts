@@ -37,7 +37,7 @@ class AdminController {
             });
           }
         }
-        // Checking if user not registered
+        // Checking if user not registered,
         else {
           res
             .status(405)
