@@ -1,10 +1,14 @@
-import { Request, Response } from "express";
+import { NextFunction, Request, Response } from "express";
 import UserModel from "../../modules/User/user.model";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 class AdminController {
-  static adminLogin = async (req: Request, res: Response) => {
+  static adminLogin = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
     try {
       const { email, password } = req.body;
       // Checking both if email & password are present
@@ -33,7 +37,7 @@ class AdminController {
             });
           }
         }
-        // Checking if user not registered
+        // Checking if user not registered,
         else {
           res
             .status(405)
@@ -49,6 +53,15 @@ class AdminController {
     } catch (err) {
       console.log(err);
       res.status(408).send({ Message: "Unable to Login" });
+    }
+  };
+  static getAllUsers = async (req: Request, res: Response) => {
+    const allUsers = await UserModel.find();
+    try {
+      res.status(200).send({ users: allUsers });
+    } catch (err) {
+      console.error;
+      res.send("Some Error Occured");
     }
   };
 }
