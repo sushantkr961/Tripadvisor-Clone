@@ -36,6 +36,12 @@ const sortListlowToHigh =()=>{
        setList([...sortedData])
 }
 
+if(list.length==0){
+    return <>
+    loading
+    </>
+}
+
 return <>
 <Box color="Black">   
 <Button m="2px" bg="white" onClick={sortListHighTolow}>High-To-low <FcNumericalSorting21/></Button>
