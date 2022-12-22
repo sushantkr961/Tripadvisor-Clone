@@ -10,7 +10,7 @@ const signup = (creds) => async (dispatch) => {
   dispatch({ type: SIGN_UP_LOADING });
   try {
     let res = await axios.post(
-      "https://rsoni2843-travelgo.herokuapp.com/users/signup",
+      "https://heroku-rsoni2843.vercel.app/users/signup",
       creds
     );
     dispatch({ type: SIGN_UP_SUCCESS, payload: res.data });
