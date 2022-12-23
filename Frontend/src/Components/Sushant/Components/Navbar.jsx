@@ -102,7 +102,7 @@ export default function Navbar() {
                     <Icon as={AiOutlineUser} />
                   </Link>
                 ) : (
-                  "SignIn"
+                  "Sign In"
                 )}
               </Button>
             </Link>
