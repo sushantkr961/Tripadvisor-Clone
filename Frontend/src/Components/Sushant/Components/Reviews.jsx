@@ -44,10 +44,9 @@ import {
 
   
   function TestimonialCard(props) {
-    const { name, role, content, avatar, index } = props;
+    const { name, role, content, avatar } = props;
     return (
       <Flex
-      // border={'1px'}
         boxShadow={'md'}
         maxW={'640px'}
         direction={{ base: 'column-reverse', md: 'row' }}
@@ -98,7 +97,7 @@ import {
         justifyContent={'center'}
         direction={'column'}
         width={'full'}>
-        <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }} border={'1px'}>
+        <Box width={{ base: 'full', sm: 'lg', lg: 'xl' }}>
         <chakra.h3
             fontFamily={'Work Sans'}
             fontWeight={'bold'}
