@@ -7,6 +7,7 @@ import Bihar from "../Components/Sushant/Pages/Bihar";
 import ErrorPage from "../Components/Sushant/Pages/ErrorPage";
 import HotelList from "./../Components/AdminDashboard/HotelList/Hotellist";
 import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
+import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
 
 const AllRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AllRoutes = () => {
         <Route path={"/profile/*"} element={<Profile />} />
         <Route path={"/bihartourism"} element={<Bihar />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path={"/addhotel"} element={<AdminAddHotel />} />
       </Routes>
     </div>
   );
