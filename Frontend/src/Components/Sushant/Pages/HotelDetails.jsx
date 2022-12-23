@@ -31,6 +31,7 @@ import { BsSafeFill, BsFillDisplayFill } from "react-icons/bs";
 import { RiVipFill } from "react-icons/ri";
 import { useEffect } from "react";
 import Reviews from "../Components/Reviews";
+import { useSelector } from "react-redux";
 
 const image = [
   "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/highland_1_watermarked_image_1024.jpeg",
@@ -41,7 +42,9 @@ const image = [
 ];
 
 const HotelDetails = () => {
+  const { singleData, isLoading, isError } = useSelector((store) => store.data);
   //   console.log(data.hotels[0].lng);
+  console.log(singleData);
   useEffect(() => {
     const iframeData = document.getElementById("iframeId");
     const lat = data.hotels[0].lat;

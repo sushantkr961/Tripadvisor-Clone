@@ -6,6 +6,9 @@ import {
   HOTEL_LIST_ERROR,
   HOTEL_LIST_LOADING,
   HOTEL_LIST_SUCCESS,
+  HOTEL_SINGLE_ERROR,
+  HOTEL_SINGLE_LOADING,
+  HOTEL_SINGLE_SUCCESS,
 } from "./data.type";
 
 const getData = (info) => (dispatch) => {
@@ -37,6 +40,20 @@ export const hotelList = (info) => (dispatch) => {
     .catch((err) => {
       console.error(err);
       dispatch({ type: HOTEL_LIST_ERROR });
+    });
+};
+
+export const singleHotel = (info) => (dispatch) => {
+  dispatch({ type: HOTEL_SINGLE_LOADING });
+  console.log(info);
+  fetch(`http://localhost:8080/hotel/${info}`)
+    .then((response) => response.json())
+    .then((response) => {
+      dispatch({ type: HOTEL_SINGLE_SUCCESS, payload: response });
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch({ type: HOTEL_SINGLE_ERROR });
     });
 };
 
