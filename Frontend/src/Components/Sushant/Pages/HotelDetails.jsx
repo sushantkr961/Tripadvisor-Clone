@@ -2,11 +2,42 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import data from "../../../hotel.json";
-import { Box, Button, Flex, Input, Text, chakra } from "@chakra-ui/react";
-import { VscLocation } from "react-icons/vsc";
+import {
+  Box,
+  Button,
+  Flex,
+  Input,
+  Text,
+  chakra,
+  Image,
+} from "@chakra-ui/react";
+import {
+  MdLocationPin,
+  MdRateReview,
+  MdFreeBreakfast,
+  MdLocalAirport,
+  MdWifi,
+  MdBusinessCenter,
+  MdHouse,
+  MdFireplace,
+  MdRoomService,
+} from "react-icons/md";
 import { TbParking } from "react-icons/tb";
+import { FaParking, FaBabyCarriage, FaSnowflake } from "react-icons/fa";
+import { GiVideoConference, GiWaterBottle } from "react-icons/gi";
+import { SiSpringsecurity } from "react-icons/si";
+import { BsSafeFill, BsFillDisplayFill } from "react-icons/bs";
+import { RiVipFill } from "react-icons/ri";
 import { useEffect } from "react";
 import Reviews from "../Components/Reviews";
+
+const image = [
+  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/highland_1_watermarked_image_1024.jpeg",
+  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/highland-pool_1_watermarked_image_1024.jpeg",
+  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/dsc01551_watermarked_image_1024.jpeg",
+  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/dsc01552_watermarked_image_1024.jpeg",
+  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/dsc01558_watermarked_image_1024.jpeg",
+];
 
 const HotelDetails = () => {
   //   console.log(data.hotels[0].lng);
@@ -18,28 +49,48 @@ const HotelDetails = () => {
   });
 
   return (
-    <Box
-      w={{ base: "100%", md: "90%", lg: "68%" }}
-      h={{ base: "" }}
-      border={"1px"}
-      margin={"auto"}
-    >
-      <Box border={"1px"}>
-        <Text>{data.hotels[0].city_slug}</Text>
-        <Text>{data.hotels[0].score}</Text>
+    <Box w={{ base: "100%", lg: "65%" }} h={{ base: "" }} margin={"auto"}>
+      <Box px={5} py={5} w={{ base: "100%", md: "69%" }} textAlign={"left"}>
+        <chakra.h3
+          fontFamily={"Work Sans"}
+          fontWeight={"bold"}
+          fontSize={30}
+          textAlign={"left"}
+          color={"black"}
+        >
+          {data.hotels[0].city_slug}
+        </chakra.h3>
         <Flex>
-          <VscLocation />{" "}
-          <Text>
-            {" "}
-            {data.hotels[0].city} {data.hotels[0].state},
-            {data.hotels[0].country}
-          </Text>
+          <MdRateReview fontSize={20} />
+          <chakra.h5
+            fontFamily={"Work Sans"}
+            fontWeight={"bold"}
+            fontSize={15}
+            ml={2}
+            textAlign={"left"}
+            color={"black"}
+          >
+            {data.hotels[0].score} reviews
+          </chakra.h5>
+        </Flex>
+        <Flex>
+          <MdLocationPin fontSize={20} />
+          <chakra.h5
+            fontFamily={"Work Sans"}
+            fontWeight={"bold"}
+            fontSize={15}
+            textAlign={"left"}
+            color={"black"}
+          >
+            {data.hotels[0].city}, {data.hotels[0].state_slug},
+            {data.hotels[0].state},{data.hotels[0].country}
+          </chakra.h5>
         </Flex>
       </Box>
       <Flex flexDir={{ base: "column", md: "row", lg: "row" }}>
-        <Box w={"70%"} border={"1px"} mr={"10px"}>
+        <Box w={{ base: "100%", md: "70%" }} mr={"10px"}>
           <Carousel>
-            <div>
+            {/* <div>
               <img src={data.hotels[0].images_large[1]} alt="images" />
             </div>
             <div>
@@ -50,10 +101,29 @@ const HotelDetails = () => {
             </div>
             <div>
               <img src={data.hotels[0].images_large[4]} alt="images" />
-            </div>
+            </div> */}
+            {/* {data.map?.((el,i) => {
+              return (<div key={i}>
+                <img src={el[i].images_large[i]} alt="images" />
+              </div>)
+            })} */}
+            {image?.map((el, i) => {
+              return (
+                <div>
+                  <img src={el} alt="images" />
+                </div>
+              );
+            })}
           </Carousel>
         </Box>
-        <Box ml={"10px"} w={"30%"} py={"50px"} px={"10px"}>
+        {/* <Flex> */}
+        <Box
+          ml={{ md: "10px" }}
+          w={{ base: "100%", md: "30%" }}
+          py={"50px"}
+          px={"10px"}
+          border={"1px"}
+        >
           <Box border={"1px"} px={"5px"} mb={"25px"}>
             CheckIn Date
             <Input
@@ -74,16 +144,23 @@ const HotelDetails = () => {
           </Box>
           <Button>Book Now</Button>
         </Box>
+        {/* </Flex> */}
       </Flex>
-      <Box border={"1px"}>
-        <Text>About</Text>
-        <Flex>
-          <Box border={"1px"} w={"55%"}>
-            <Box>
-              <Text>{data.hotels[0].score}</Text>
-            </Box>
-            <Box>
-              <Text>
+      <Box>
+        <chakra.h3
+          fontFamily={"Work Sans"}
+          fontWeight={"bold"}
+          fontSize={30}
+          textAlign={"left"}
+          color={"black"}
+          m={2}
+        >
+          About
+        </chakra.h3>
+        <Flex flexDir={{ base: "column", md: "row" }}>
+          <Box w={{ base: "100%", md: "55%" }}>
+            <Box m={5}>
+              <Text fontSize={"xl"}>
                 {data.hotels[0].city_slug} Hotel truly yours, stands out from
                 the others by offering a product tailor-made towards our
                 customer's wellbeing. We provide a seamless experience of
@@ -93,84 +170,90 @@ const HotelDetails = () => {
               </Text>
             </Box>
           </Box>
-          <Box border={"1px"} w={"45%"}>
+          <Box w={{ base: "100%", md: "45%" }}>
             <Box>
-              <Text>Property amenities</Text>
+              <Text fontSize={"large"} fontWeight={"semibold"}>
+                Property amenities
+              </Text>
               <Flex>
-                <Box border={"1px"} w={"50%"}>
-                  <Flex>
-                    <TbParking /> Free Parking
+                <Box w={"50%"}>
+                  <Flex mt={1}>
+                    <FaParking fontSize={20} /> Free Parking
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdFreeBreakfast fontSize={20} /> Free breakfast
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdLocalAirport fontSize={20} /> Airport transportation
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <GiVideoConference fontSize={20} /> Conference facilities
                   </Flex>
                 </Box>
                 <Box>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdWifi fontSize={20} /> Free High Speed WiFi
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <FaBabyCarriage fontSize={20} /> Babysitting
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdBusinessCenter fontSize={20} /> Bussiness Centre
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <SiSpringsecurity fontSize={20} /> 24-hour security
                   </Flex>
                 </Box>
               </Flex>
             </Box>
-            <Box>
-              <Text>Room Features</Text>
+            <Box mt={2}>
+              <Text fontSize={"large"} fontWeight={"semibold"}>
+                Room Features
+              </Text>
               <Flex>
-                <Box border={"1px"} w={"50%"}>
-                  <Flex>
-                    <TbParking /> Free Parking
+                <Box w={"50%"}>
+                  <Flex mt={1}>
+                    <FaSnowflake fontSize={20} /> Air conditioning
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdHouse fontSize={20} /> Housekeeping
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <BsSafeFill fontSize={20} /> Safe
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <GiWaterBottle fontSize={20} /> Bottled water
                   </Flex>
                 </Box>
                 <Box>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdFireplace fontSize={20} /> Fireplace
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <MdRoomService fontSize={20} /> Room service
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <RiVipFill fontSize={20} /> VIP room facilities
                   </Flex>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <BsFillDisplayFill fontSize={20} /> Flatscreen TV
                   </Flex>
                 </Box>
               </Flex>
             </Box>
-            <Box>
-              <Text>Room types</Text>
+            <Box mt={2}>
+              <Text fontSize={"large"} fontWeight={"semibold"}>
+                Room types
+              </Text>
               <Flex>
-                <Box border={"1px"} w={"50%"}>
-                  <Flex>
-                    <TbParking /> Free Parking
+                <Box w={"50%"}>
+                  <Flex mt={1}>
+                    <TbParking fontSize={20} /> Non-smoking rooms
                   </Flex>
                 </Box>
                 <Box>
-                  <Flex>
-                    <TbParking /> Free Parking
+                  <Flex mt={1}>
+                    <TbParking fontSize={20} /> Suites
                   </Flex>
                 </Box>
               </Flex>
@@ -178,7 +261,6 @@ const HotelDetails = () => {
           </Box>
         </Flex>
       </Box>
-
       <Box>
         <Box>
           <chakra.h3
@@ -190,16 +272,23 @@ const HotelDetails = () => {
           >
             Location
           </chakra.h3>
-          <div>
-            <iframe
-              id="iframeId"
-              width={"65%"}
-              height={"250px"}
-              title="location"
-            ></iframe>
-          </div>
+          <Flex flexDir={{ base: "column", md: "row" }}>
+            <Box w={{ base: "93%", md: "60%" }} m={3} h={"300px"}>
+              <iframe
+                id="iframeId"
+                width={"99%"}
+                height={"99%"}
+                title="location"
+              ></iframe>
+            </Box>
+            <Box m={3} border={"1px"}>
+              <Text textAlign={"right"}>Ad</Text>
+              <Image src="https://www.bing.com/th/id/OGC.08ad5208469647966c2afb98878457f7?pid=1.7&rurl=https%3a%2f%2fmedia1.tenor.com%2fimages%2f08ad5208469647966c2afb98878457f7%2ftenor.gif%3fitemid%3d17419353&ehk=TMZV66pxKpOI0r9%2bVrufLZobDE58MIN0S00sd5NaW4w%3d" />
+            </Box>
+          </Flex>
         </Box>
-        <Box>
+
+        <Box mb={20}>
           <Reviews />
         </Box>
       </Box>

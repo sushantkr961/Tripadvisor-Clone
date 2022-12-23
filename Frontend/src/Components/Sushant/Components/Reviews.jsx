@@ -94,7 +94,7 @@ export default function GridBlurredBackdrop() {
       direction={"column"}
       width={"full"}
     >
-      <Box width={{ base: "full", sm: "lg", lg: "xl" }} border={"1px"}>
+      <Box width={{ base: "full", sm: "lg", lg: "xl" }}>
         <chakra.h3
           fontFamily={"Work Sans"}
           fontWeight={"bold"}
