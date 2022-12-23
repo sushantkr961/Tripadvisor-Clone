@@ -1,0 +1,33 @@
+.formbox{
+    border:1px solid black ;
+    margin:auto;
+    background-color: #FFFBD0;
+   
+}
+.flex1{
+    align-items:center;
+     gap:7px;
+}
+
+.Text1{
+    font-size:x-large ;
+    font-weight: 500;
+  
+}
+.button{
+    margin-top:50px;
+     margin-left:15%;
+     width:70%;
+     background-color:gray.300;
+      font-size:x-large
+}
+.inputbox{
+    width:100%;
+      margin-top:8px;
+    
+}
+
+.icons{
+    font-size:30px;
+     color:red
+}

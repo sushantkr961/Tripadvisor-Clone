@@ -10,4 +10,60 @@
     "rating":4,
     "reviewCount":72,
     "cheapestPrice":700,
-    "featured":false
+    "featured":false,
+    "ac":true
+
+
+
+# new achema
+    {
+
+"city_slug":"candolim-615",
+"instant_bookable":false,
+"ac":true,
+"cook_on_call":false,
+"premium":false,
+"pets":true,
+"state_slug":"goa-11",
+"gym":true,
+"internet":false,
+"television":true,
+"review_rating":null,
+"created_on":"2013-08-23 14:08:38",
+"max_price_in_usd":209,
+"check_in":null,
+"images_small":[],
+"parking":false,
+"active":true,
+"spa":false,
+"number_of_rooms":1,
+"refrigerator":true,
+"city":"candolim",
+"images_large":[],
+"property_type":"Apartment",
+"review_count":0,
+"housekeeping":true,
+"title":"1 Double A/C Bedroom with Bath, Lounge, Kitchen in Candolim!!",
+"country":"india",
+"number_of_bathrooms":1,
+"country_slug":"india",
+"starting_price_in_usd":1290,
+"occupancy":4,
+"images_medium":[],
+"functional_kitchen":true,
+"swimming_pool":true,
+"state":"arunachal pradesh",
+"score":45,
+"lng":73.7700337172,
+"lat":15.5169558574,
+"washing_machine":true,
+"images_mid_large":[],
+"units":1,
+"dish_washer":false,
+"availability_pct":39.44,
+"prop_tags":[],
+"url":"/holiday-home/15323035-1-double-ac-bedroom-with-bath-lounge-kitchen-in…",
+"currency":"NOK",
+"slug":"15323035-1-double-ac-bedroom-with-bath-lounge-kitchen-i-candolim"
+    
+}

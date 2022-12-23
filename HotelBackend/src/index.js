@@ -15,7 +15,7 @@ app.use(cors())
 
 
 
- app.use("/hotel",hotelRoute);
+ app.use("/hotels",hotelRoute);
 
 
  app.get('/',(req,res)=>res.send('hello server started'))
