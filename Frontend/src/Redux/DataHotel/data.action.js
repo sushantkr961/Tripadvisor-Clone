@@ -40,4 +40,17 @@ export const hotelList = (info) => (dispatch) => {
     });
 };
 
+export const singleHotel = (info) => (dispatch) => {
+  dispatch({ type: HOTEL_LIST_LOADING });
+  fetch(`http://localhost:8080/hotel/${info}`)
+    .then((response) => response.json())
+    .then((response) => {
+      dispatch({ type: HOTEL_LIST_SUCCESS, payload: response.hotels });
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch({ type: HOTEL_LIST_ERROR });
+    });
+};
+
 export default getData;
