@@ -62,7 +62,7 @@ const HotelList = () => {
           mb={2}
           templateColumns="repeat(1, 1fr)"
           gap={{ base: "2", xs: "3", lg: "5px", xl: "6px" }}
-          w={{ base: "100%", lg: "100%", xl: "70%" }}
+          w={{ base: "100%", lg: "99%", xl: "70%" }}
           bg="white "
         >
           {/* map the hotelList card */}
