@@ -1,10 +1,4 @@
-import {
-  Flex,
-  IconButton,
-  Image,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Flex, IconButton, Text, useColorModeValue } from "@chakra-ui/react";
 import { FiMenu } from "react-icons/fi";
 const MobileNav = ({ onOpen, ...rest }) => {
   return (
@@ -27,7 +21,7 @@ const MobileNav = ({ onOpen, ...rest }) => {
         icon={<FiMenu />}
       />
 
-      <Text ml={28}>{/* <Image h={100} w={100} /> */}</Text>
+      {/* <Text ml={28}><Image h={100} w={100} /></Text> */}
     </Flex>
   );
 };
