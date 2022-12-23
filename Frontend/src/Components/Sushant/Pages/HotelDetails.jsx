@@ -21,8 +21,9 @@ import {
   MdHouse,
   MdFireplace,
   MdRoomService,
+  MdSmokeFree,
+  MdAirlineSeatIndividualSuite,
 } from "react-icons/md";
-import { TbParking } from "react-icons/tb";
 import { FaParking, FaBabyCarriage, FaSnowflake } from "react-icons/fa";
 import { GiVideoConference, GiWaterBottle } from "react-icons/gi";
 import { SiSpringsecurity } from "react-icons/si";
@@ -30,6 +31,7 @@ import { BsSafeFill, BsFillDisplayFill } from "react-icons/bs";
 import { RiVipFill } from "react-icons/ri";
 import { useEffect } from "react";
 import Reviews from "../Components/Reviews";
+import { useSelector } from "react-redux";
 
 const image = [
   "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/highland_1_watermarked_image_1024.jpeg",
@@ -40,7 +42,9 @@ const image = [
 ];
 
 const HotelDetails = () => {
+  const { singleData, isLoading, isError } = useSelector((store) => store.data);
   //   console.log(data.hotels[0].lng);
+  console.log(singleData);
   useEffect(() => {
     const iframeData = document.getElementById("iframeId");
     const lat = data.hotels[0].lat;
@@ -57,6 +61,7 @@ const HotelDetails = () => {
           fontSize={30}
           textAlign={"left"}
           color={"black"}
+          textTransform={"capitalize"}
         >
           {data.hotels[0].city_slug}
         </chakra.h3>
@@ -116,35 +121,81 @@ const HotelDetails = () => {
             })}
           </Carousel>
         </Box>
-        {/* <Flex> */}
         <Box
           ml={{ md: "10px" }}
           w={{ base: "100%", md: "30%" }}
           py={"50px"}
           px={"10px"}
-          border={"1px"}
         >
-          <Box border={"1px"} px={"5px"} mb={"25px"}>
-            CheckIn Date
+          <Box mb={"100px"} border={"1px"}>
+            <Text textAlign={"right"}>Ad</Text>
+            <Image src="https://www.bing.com/th/id/OGC.069d617dca720be2d65014963515d28e?pid=1.7&rurl=https%3a%2f%2fwww.paredro.com%2fwp-content%2fuploads%2f2015%2f05%2fsta2.gif&ehk=L0lKyyBMVuFO9E%2bPCd7N%2bd%2b5fRynrsVbQKjN8%2fNlpog%3d" />
+          </Box>
+          <Box
+            px={"5px"}
+            mb={"25px"}
+            boxShadow={"lg"}
+            borderRadius={5}
+            p={2}
+            borderLeft={"2px"}
+            borderLeftColor={"teal"}
+          >
+            <chakra.h4
+              fontFamily={"Work Sans"}
+              fontWeight={"bold"}
+              fontSize={20}
+              textAlign={"left"}
+              color={"black"}
+              m={2}
+            >
+              Check in Date
+            </chakra.h4>
             <Input
-              placeholder="CheckIn Date"
+              placeholder="Check in Date"
               size="md"
               type="date"
               border={"none"}
+              color="teal"
+              _placeholder={{ color: "inherit" }}
+              fontWeight={"semibold"}
             />
           </Box>
-          <Box border={"1px"} mb={"25px"}>
-            CheckOut Date
+          <Box
+            mb={"25px"}
+            boxShadow={"lg"}
+            borderRadius={5}
+            p={2}
+            borderLeft={"2px"}
+            borderLeftColor={"tomato"}
+          >
+            <chakra.h4
+              fontFamily={"Work Sans"}
+              fontWeight={"bold"}
+              fontSize={20}
+              textAlign={"left"}
+              color={"black"}
+              m={2}
+            >
+              Check out Date
+            </chakra.h4>
             <Input
               placeholder="CheckOut Date"
               size="md"
               type="date"
               border={"none"}
+              color="tomato"
+              _placeholder={{ color: "inherit" }}
+              fontWeight={"semibold"}
             />
           </Box>
-          <Button>Book Now</Button>
+          <Button
+            bgColor={"teal"}
+            color={"white"}
+            _hover={{ color: "teal", bgColor: "white", border: "2px" }}
+          >
+            Book Now
+          </Button>
         </Box>
-        {/* </Flex> */}
       </Flex>
       <Box>
         <chakra.h3
@@ -248,12 +299,12 @@ const HotelDetails = () => {
               <Flex>
                 <Box w={"50%"}>
                   <Flex mt={1}>
-                    <TbParking fontSize={20} /> Non-smoking rooms
+                    <MdSmokeFree fontSize={20} /> Non-smoking rooms
                   </Flex>
                 </Box>
                 <Box>
                   <Flex mt={1}>
-                    <TbParking fontSize={20} /> Suites
+                    <MdAirlineSeatIndividualSuite fontSize={20} /> Suites
                   </Flex>
                 </Box>
               </Flex>

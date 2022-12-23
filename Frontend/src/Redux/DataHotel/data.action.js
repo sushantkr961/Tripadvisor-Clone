@@ -6,28 +6,20 @@ import {
   HOTEL_LIST_ERROR,
   HOTEL_LIST_LOADING,
   HOTEL_LIST_SUCCESS,
+  HOTEL_SINGLE_ERROR,
+  HOTEL_SINGLE_LOADING,
+  HOTEL_SINGLE_SUCCESS,
 } from "./data.type";
-
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "078e0323b2msh39126e2997c5694p16cae7jsn343843ef04ba",
-    "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
-  },
-};
 
 const getData = (info) => (dispatch) => {
   dispatch({ type: DATA_LOADING });
-  fetch(
-    `https://travel-advisor.p.rapidapi.com/locations/search?query=${info}&limit=30&offset=0&units=km&location_id=1&currency=INR&sort=relevance&lang=en_US`,
-    options
-  )
+  fetch(`http://localhost:8080/hotel?query=${info}`)
     .then((response) => response.json())
     .then((response) => {
-      console.log(info);
+      console.log(response);
       dispatch({
         type: DATA_SUCCESS,
-        payload: response.data,
+        payload: response.hotels,
       });
     })
     .catch((err) => {
@@ -38,18 +30,30 @@ const getData = (info) => (dispatch) => {
 export const emptyData = () => ({ type: EMPTY_INPUT });
 
 export const hotelList = (info) => (dispatch) => {
+  console.log(info);
   dispatch({ type: HOTEL_LIST_LOADING });
-  fetch(
-    `https://travel-advisor.p.rapidapi.com/hotels/list?location_id=${info}&adults=1&rooms=1&nights=2&offset=0&currency=USD&order=asc&limit=30&sort=recommended&lang=en_US`,
-    options
-  )
+  fetch(`http://localhost:8080/hotel?query=${info}`)
     .then((response) => response.json())
     .then((response) => {
-      dispatch({ type: HOTEL_LIST_SUCCESS, payload: response.data });
+      dispatch({ type: HOTEL_LIST_SUCCESS, payload: response.hotels });
     })
     .catch((err) => {
       console.error(err);
       dispatch({ type: HOTEL_LIST_ERROR });
+    });
+};
+
+export const singleHotel = (info) => (dispatch) => {
+  dispatch({ type: HOTEL_SINGLE_LOADING });
+  console.log(info);
+  fetch(`http://localhost:8080/hotel/${info}`)
+    .then((response) => response.json())
+    .then((response) => {
+      dispatch({ type: HOTEL_SINGLE_SUCCESS, payload: response });
+    })
+    .catch((err) => {
+      console.error(err);
+      dispatch({ type: HOTEL_SINGLE_ERROR });
     });
 };
 

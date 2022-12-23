@@ -1,5 +1,6 @@
 import {
   Box,
+  Flex,
   Input,
   InputGroup,
   InputLeftElement,
@@ -23,11 +24,9 @@ const img =
 const Searchbar = () => {
   const { isLoading, isError, debData } = useSelector((store) => store.data);
   const dispatch = useDispatch();
-  console.log(hotelList);
+
   const [query, setQuery] = React.useState("");
 
-  // const data = debData
-  // console.log(data)
   const handleChange = (e) => {
     let timer = setTimeout(() => {
       setQuery(e.target.value);
@@ -42,7 +41,6 @@ const Searchbar = () => {
       dispatch(getData(query));
     }
   }, [query]);
-  console.log(debData);
   return (
     <>
       <Box
@@ -92,15 +90,23 @@ const Searchbar = () => {
           >
             {debData?.map((item) => {
               return (
-                <Link to={"/hotelLists"}>
-                  <Box
-                    onClick={() =>
-                      dispatch(hotelList(item.result_object.location_id))
-                    }
-                    key={item.result_object.longitude}
+                <Link key={item._id} to={"/hotels"}>
+                  <Flex
+                    justifyContent={"space-between"}
+                    textTransform={"capitalize"}
+                    textAlign={"left"}
+                    p={2}
+                    onClick={() => dispatch(hotelList(item.city))}
                   >
-                    <Text>{item.result_object.name}</Text>
-                  </Box>
+                    <Text fontWeight={"bold"}>
+                      {item?.city +
+                        ", " +
+                        item?.state +
+                        ", " +
+                        item?.property_type}
+                    </Text>
+                    <Text>{}</Text>
+                  </Flex>
                 </Link>
               );
             })}
