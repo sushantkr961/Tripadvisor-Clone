@@ -1,25 +1,37 @@
 import axios from "axios";
 import {
-  SIGN_UP_ERROR,
-  SIGN_UP_EXISTS,
-  SIGN_UP_LOADING,
-  SIGN_UP_SUCCESS,
+  SIGNUP_ERROR,
+  SIGNUP_ERROR_CONF_PASSWORD,
+  SIGNUP_ERROR_EMPTY_FIELD,
+  SIGNUP_ERROR_EXISTS,
+  SIGNUP_LOADING,
+  SIGNUP_SUCCESS,
 } from "./signup.type";
+const registerUrl = "http://localhost:8080/user/register";
 
-const signup = (creds) => async (dispatch) => {
-  dispatch({ type: SIGN_UP_LOADING });
+const signup = (info) => async (dispatch) => {
+  dispatch({ type: SIGNUP_LOADING });
+  // Success Here
   try {
-    let res = await axios.post(
-      "https://heroku-rsoni2843.vercel.app/users/signup",
-      creds
-    );
-    dispatch({ type: SIGN_UP_SUCCESS, payload: res.data });
-    return res.data;
-  } catch (error) {
-    if (error.response.data === "Email already exists") {
-      return dispatch({ type: SIGN_UP_EXISTS, payload: error.response });
-    } else {
-      dispatch({ type: SIGN_UP_ERROR });
+    let res = await axios.post(registerUrl, info);
+    console.log(res);
+    dispatch({ type: SIGNUP_SUCCESS, payload: res.data.Message });
+  } catch (err) {
+    // All Errors Here
+    console.log(err);
+    const status = err.response.status;
+    const errorMessage = err.response.data.Message;
+    if (status === 409) {
+      dispatch({ type: SIGNUP_ERROR_EXISTS, payload: errorMessage });
+    }
+    if (status === 406) {
+      dispatch({ type: SIGNUP_ERROR_EMPTY_FIELD, payload: errorMessage });
+    }
+    if (status === 400) {
+      dispatch({ type: SIGNUP_ERROR, payload: errorMessage });
+    }
+    if (status === 405) {
+      dispatch({ type: SIGNUP_ERROR_CONF_PASSWORD, payload: errorMessage });
     }
   }
 };
