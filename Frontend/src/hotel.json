@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-[
-=======
+
 {
   "hotels": [
->>>>>>> c1a2e00b90bed0a342aa373cf63cf0aa67bf9d22
     {
       "city_slug": "candolim-615",
       "instant_bookable": false,

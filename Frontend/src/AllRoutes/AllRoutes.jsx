@@ -5,6 +5,7 @@ import Login from "../Components/Nipendra/Users/Login";
 import Home from "../Components/Sushant/Pages/Home";
 import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
 import Profile from "../Components/Nipendra/Profile/Profile";
+import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
 
 const AllRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const AllRoutes = () => {
         <Route path={"/hotellist"} element={<HotelList />} />
         <Route path={"/hoteldetails"} element={<HotelDetails />} />
         <Route path={"/profile/*"} element={<Profile />} />
+        <Route path={"/addhotel"} element={<AdminAddHotel />} />
       </Routes>
     </div>
   );
