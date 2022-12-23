@@ -6,6 +6,7 @@ import Profile from "../Components/Nipendra/Profile/Profile";
 import Bihar from "../Components/Sushant/Pages/Bihar";
 import ErrorPage from "../Components/Sushant/Pages/ErrorPage";
 import HotelList from "./../Components/AdminDashboard/HotelList/Hotellist";
+import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
 
 const AllRoutes = () => {
   return (
