@@ -46,10 +46,11 @@ const Searchbar = () => {
   return (
     <>
       <Box
-        w={{base:"100%", md:"75%", lg:'62%'}}
+        pos={"relative"}
+        w={{ base: "100%", md: "75%", lg: "62%" }}
         margin="auto"
         mt="30px"
-        h="340px"
+        h={{ base: "200px", md: "340px" }}
         bgImg={img}
         bgRepeat="no-repeat"
         backgroundSize="cover"
@@ -57,7 +58,13 @@ const Searchbar = () => {
         display="flex"
         align="center"
       >
-        <Stack w="60%" m="auto">
+        <Stack
+          pos={"absolute"}
+          top={{ base: "15%", md: "35%" }}
+          left={"20%"}
+          w="60%"
+          m="auto"
+        >
           <InputGroup>
             <InputLeftElement
               children={<Search2Icon fontSize="x-large" />}

@@ -25,4 +25,6 @@ router.post("/resetPassword/:id/:token", userPasswordReset.userPasswordReset);
 router.post("/changePassword", changePasswordController.changeUserPassword);
 router.get("/loggedUser", LoginController.loggedUser);
 router.get("/getUsers", AdminController.getAllUsers);
+router.get("/getUsers/:id", AdminController.getUser);
+
 export default router;

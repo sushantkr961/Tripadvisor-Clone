@@ -24,6 +24,7 @@ const getData = (info) => (dispatch) => {
   )
     .then((response) => response.json())
     .then((response) => {
+      console.log(info);
       dispatch({
         type: DATA_SUCCESS,
         payload: response.data,
@@ -51,12 +52,5 @@ export const hotelList = (info) => (dispatch) => {
       dispatch({ type: HOTEL_LIST_ERROR });
     });
 };
-// fetch(
-//   "https://travel-advisor.p.rapidapi.com/locations/v2/auto-complete?query=lucknow&lang=en_US&units=km",
-//   options
-// )
-//   .then((response) => response.json())
-//   .then((response) => console.log(response.data))
-//   .catch((err) => console.error(err));
 
 export default getData;

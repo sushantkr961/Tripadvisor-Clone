@@ -7,6 +7,7 @@ import {
   Stack,
   useColorModeValue,
   useBreakpointValue,
+  Icon,
 } from "@chakra-ui/react";
 import {} from "@chakra-ui/icons";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -16,15 +17,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { logout } from "../../../Redux/Users/Login/login.action";
 import { Link } from "react-router-dom";
+import { AiOutlineUser } from "react-icons/ai";
 
 export default function Navbar() {
   const { isAuth } = useSelector((store) => store.login);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleAuth = () => {
     if (isAuth) {
       <Navigate to={"/"} />;
-      dispatch(logout());
     }
   };
 
@@ -96,7 +97,13 @@ export default function Navbar() {
                 }}
                 onClick={handleAuth}
               >
-                {isAuth ? "Logout" : "Sign In"}
+                {isAuth ? (
+                  <Link to={"/profile/account"}>
+                    <Icon as={AiOutlineUser} />
+                  </Link>
+                ) : (
+                  "Sign In"
+                )}
               </Button>
             </Link>
             <Text

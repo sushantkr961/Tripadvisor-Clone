@@ -181,12 +181,13 @@ const HotelDetails = () => {
 
       <Box>
         <Box>
-        <chakra.h3
-            fontFamily={'Work Sans'}
-            fontWeight={'bold'}
+          <chakra.h3
+            fontFamily={"Work Sans"}
+            fontWeight={"bold"}
             fontSize={30}
-            textAlign={'left'}
-            color={'black'}>
+            textAlign={"left"}
+            color={"black"}
+          >
             Location
           </chakra.h3>
           <div>
@@ -199,7 +200,7 @@ const HotelDetails = () => {
           </div>
         </Box>
         <Box>
-            <Reviews />
+          <Reviews />
         </Box>
       </Box>
     </Box>

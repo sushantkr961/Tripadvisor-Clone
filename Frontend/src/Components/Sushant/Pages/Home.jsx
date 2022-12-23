@@ -10,7 +10,7 @@ const Home = () => {
       <Searchbar />
       <IndiaTour />
       <Explore />
-      <Temple /> 
+      <Temple />
     </>
   );
 };

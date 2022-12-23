@@ -64,6 +64,11 @@ class AdminController {
       res.send("Some Error Occured");
     }
   };
+  static getUser = async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const user = await UserModel.findById(id);
+    res.send(user);
+  };
 }
 
 export default AdminController;

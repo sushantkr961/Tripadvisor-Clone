@@ -1,0 +1,10 @@
+.active div {
+  color: #00aa6c;
+  border-top: 1px solid #00aa6c;
+  font-weight: bold;
+  border-bottom: 1px solid #00aa6c;
+  border-right: 6px solid #00aa6c;
+}
+.default {
+  color: black;
+}
