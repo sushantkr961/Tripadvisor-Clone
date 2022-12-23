@@ -5,10 +5,13 @@ import { HotelListCard } from "./HotelListCard";
 import { useState, useEffect } from "react";
 import { FcNumericalSorting21, FcNumericalSorting12 } from "react-icons/fc";
 // import { HotelList } from "./Hotellist";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { singleHotel } from "../../../Redux/DataHotel/data.action";
 
 const HotelList = () => {
+  const dispatch = useDispatch();
+
   const { dataofList } = useSelector((store) => store.data);
   console.log(dataofList);
   // destructuring The data
@@ -69,7 +72,10 @@ const HotelList = () => {
           {list?.map((e) => {
             return (
               <>
-                <Link to={"/hotels/" + e._id}>
+                <Link
+                  onClick={() => dispatch(singleHotel(e._id))}
+                  to={"/hotels/" + e._id}
+                >
                   <HotelListCard data={e} />
                 </Link>
               </>

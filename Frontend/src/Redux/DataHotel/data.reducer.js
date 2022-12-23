@@ -6,6 +6,9 @@ import {
   HOTEL_LIST_ERROR,
   HOTEL_LIST_LOADING,
   HOTEL_LIST_SUCCESS,
+  HOTEL_SINGLE_ERROR,
+  HOTEL_SINGLE_LOADING,
+  HOTEL_SINGLE_SUCCESS,
 } from "./data.type";
 
 const initialState = {
@@ -13,6 +16,7 @@ const initialState = {
   isError: false,
   debData: [],
   dataofList: [],
+  singleData: [],
 };
 
 function dataReducer(state = initialState, action) {
@@ -55,6 +59,28 @@ function dataReducer(state = initialState, action) {
       };
     }
     case HOTEL_LIST_ERROR: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
+    }
+    case HOTEL_SINGLE_LOADING: {
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    }
+    case HOTEL_SINGLE_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        singleData: action.payload,
+      };
+    }
+    case HOTEL_SINGLE_ERROR: {
       return {
         ...state,
         isLoading: false,
