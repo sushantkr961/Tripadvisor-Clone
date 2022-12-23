@@ -7,8 +7,12 @@ import Bihar from "../Components/Sushant/Pages/Bihar";
 import ErrorPage from "../Components/Sushant/Pages/ErrorPage";
 import HotelList from "./../Components/AdminDashboard/HotelList/Hotellist";
 import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
+
 import TravellerDetails from "../Components/Ravi/TravellerDetails";
 import PaymentDetails from "../Components/Ravi/PaymentDetails";
+
+import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
+
 
 const AllRoutes = () => {
   return (
@@ -20,9 +24,14 @@ const AllRoutes = () => {
         <Route path={"/hotels/:id"} element={<HotelDetails />} />
         <Route path={"/profile/*"} element={<Profile />} />
         <Route path={"/bihartourism"} element={<Bihar />} />
+
         <Route path={"*"} element={<ErrorPage />} />
         <Route path={"/userdetails"} element={<TravellerDetails />} />
         <Route path={"/payments"} element={<PaymentDetails />} />
+
+        <Route path="*" element={<ErrorPage />} />
+        <Route path={"/addhotel"} element={<AdminAddHotel />} />
+
       </Routes>
     </div>
   );
