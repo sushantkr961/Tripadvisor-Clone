@@ -58,6 +58,7 @@ const HotelDetails = () => {
           fontSize={30}
           textAlign={"left"}
           color={"black"}
+          textTransform={"capitalize"}
         >
           {data.hotels[0].city_slug}
         </chakra.h3>
