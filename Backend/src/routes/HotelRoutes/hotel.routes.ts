@@ -10,4 +10,4 @@ hotelRoute.get("/:id", hotelController.singleHotel);
 
 hotelRoute.post("/postHotel", hotelController.adminPostHotel);
 
-export default hotelRoute
+export default hotelRoute;
