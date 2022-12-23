@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Alert,
   AlertIcon,
@@ -6,22 +6,20 @@ import {
   Button,
   FormControl,
   FormLabel,
-  Image,
   Input,
   Text,
 } from "@chakra-ui/react";
-import Logo from "./TravelGo.png";
 import SignupModal from "./SignupModal";
 import PasswordInput from "./MyComponents/PasswordInput";
 import login from "../../../Redux/Users/Login/login.action";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isLoading, isError, isAuth, token, noEmail, incorrectEmail } =
-    useSelector((store) => store.login);
+  const { isLoading, isAuth, noEmail, incorrectEmail } = useSelector(
+    (store) => store.login
+  );
   const [user, setUser] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
@@ -40,20 +38,17 @@ const LoginForm = () => {
       password: "",
     });
   };
-  useEffect(() => {
-    if (isAuth) {
-      navigate("/");
-    } else {
-      navigate("/login");
-    }
-  }, [isAuth]);
+
+  if (isAuth) {
+    return <Navigate to={"/"} />;
+  }
 
   return (
     <Box>
-      <Text fontSize="4xl" as="b">
+      <Text fontSize={{ base: "2xl", md: "4xl" }} as="b">
         Welcome to TravelGo!
       </Text>
-      <Text fontSize={"md"}>
+      <Text fontSize={{ base: "sm", md: "md" }}>
         Please Login/Register using your Email/Mobile to continue
       </Text>
       <form onSubmit={handleSubmit}>
@@ -97,6 +92,7 @@ const LoginForm = () => {
           </FormControl>
           <Button
             isLoading={isLoading}
+            loadingText={"Signing you in"}
             _hover={{
               background: "rgb(247, 247, 249)",
               color: "black",

@@ -15,22 +15,22 @@ const Temple = () => {
 
   return (
     <Box mb='100px'>
-        <Box w='65%' margin='auto' mt='50px' mb='70px'>
+        <Box w={{base:"100%", md:"90%", lg:'71%'}} margin='auto' mt='50px' mb='70px'>
             <Box w='89%' margin='auto'  mb='10px'>
                 <Text textAlign='left' fontSize='24px' fontWeight='bold'>Most Popular Temples to visit in India</Text>
             </Box>
             <Box display='flex'>
                 <Carousel breakPoints={breakPoints}>
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2018/06/Tirumala-Venkateswara-Temple.jpg' name='Tirumala Venkateswara Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Ramanathaswamy-Temple.jpg' name='Ramanathaswamy Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Somnath-and-Dwarka-Temple.jpg' name='Somnath and Dwarka Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Jagannath-Temple.jpg' name='Jagannath Temple' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2018/06/Tirumala-Venkateswara-Temple.jpg' name='Tirumala Venkateswara' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Ramanathaswamy-Temple.jpg' name='Ramanathaswamy' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Somnath-and-Dwarka-Temple.jpg' name='Somnath and Dwarka' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Jagannath-Temple.jpg' name='Jagannath' />
                 <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/vaishno-devi-temple.jpg' name='Vaishno Devi' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2018/06/meenakshi-temple-madurai.jpg' name='Meenakshi Amman Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Kedarnath-Temple.jpg' name='Kedarnath Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Gangotri-Temple.jpg' name='Gangotri Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Badrinath-Temple.jpg' name='Badrinath Temple' />
-                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/golden-temple.jpg' name='Golden Temple' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2018/06/meenakshi-temple-madurai.jpg' name='Meenakshi Amman' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Kedarnath-Temple.jpg' name='Kedarnath' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Gangotri-Temple.jpg' name='Gangotri' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/Badrinath-Temple.jpg' name='Badrinath' />
+                <Card src='https://www.visittnt.com/blog/wp-content/uploads/2019/06/golden-temple.jpg' name='Golden' />
                 </Carousel>
             </Box>
         </Box>

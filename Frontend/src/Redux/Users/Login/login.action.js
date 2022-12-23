@@ -15,7 +15,7 @@ const login = (creds) => async (dispatch) => {
   dispatch({ type: LOGIN_LOADING });
   try {
     let res = await axios.post(
-      "https://travelgo-rsoni2843.onrender.com/users/login",
+      "https://heroku-rsoni2843.vercel.app/users/login",
       creds
     );
     dispatch({ type: LOGIN_SUCCESS, payload: JSON.stringify(res.data.user) });
