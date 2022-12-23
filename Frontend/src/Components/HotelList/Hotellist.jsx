@@ -9,10 +9,10 @@ export  const HotelList=()=>{
 // destructuring The data
 const [list,setList]=useState([]);
 
-const {results}=data;
+const {hotels}=data;
  
 useEffect(()=>{
-setList(results)
+setList(hotels)
 },[])
     // console.log(results)
 
@@ -36,7 +36,7 @@ const sortListlowToHigh =()=>{
        setList([...sortedData])
 }
 
-if(list.length==0){
+if(list.length===0){
     return <>
     loading
     </>

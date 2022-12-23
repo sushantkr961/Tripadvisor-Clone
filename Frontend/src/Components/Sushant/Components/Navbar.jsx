@@ -9,13 +9,15 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import {} from "@chakra-ui/icons";
-import { Navigate, Link } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { MdOutlineNotifications } from "react-icons/md";
+import { FiHeart } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "./../../../Redux/Users/Login/login.action";
+import { Navigate } from "react-router";
+import { logout } from "../../../Redux/Users/Login/login.action";
+import { Link } from "react-router-dom";
 
-export default function WithSubnavigation() {
+export default function Navbar() {
   const { isAuth } = useSelector((store) => store.login);
   const dispatch = useDispatch();
 
@@ -25,6 +27,7 @@ export default function WithSubnavigation() {
       dispatch(logout());
     }
   };
+
   return (
     <Flex
       justify="center"
@@ -33,7 +36,7 @@ export default function WithSubnavigation() {
       zIndex={"100"}
       bg={"#FFFFFF"}
     >
-      <Box w={{ sm: "100%", md: "100%", lg: "65%" }}>
+      <Box w={{ base: "100%", md: "100%", lg: "65%" }}>
         <Flex
           bg={useColorModeValue("white", "gray.800")}
           color={useColorModeValue("gray.600", "white")}
@@ -54,7 +57,6 @@ export default function WithSubnavigation() {
               w="200px"
             />
           </Flex>
-
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={"flex-end"}
@@ -68,25 +70,33 @@ export default function WithSubnavigation() {
               variant={"link"}
               href={"#"}
             >
+              <FiHeart fontSize={25} />
+            </Text>
+            <Text
+              as={"button"}
+              fontSize={"sm"}
+              fontWeight={400}
+              variant={"link"}
+              href={"#"}
+            >
               <MdOutlineNotifications fontSize={30} />
             </Text>
             <Link to={"/login"}>
               <Button
-                onClick={handleAuth}
                 display={{ base: "none", md: "inline-flex" }}
                 fontSize={"md"}
                 fontWeight={700}
                 color={"white"}
                 bg={"black"}
-                href={"#"}
                 borderRadius={"20px"}
                 _hover={{
                   bg: "white",
                   color: "black",
                   border: "1px",
                 }}
+                onClick={handleAuth}
               >
-                {isAuth ? "Log Out" : "Sign In"}
+                {isAuth ? "Logout" : "Sign In"}
               </Button>
             </Link>
             <Text

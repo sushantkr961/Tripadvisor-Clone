@@ -13,7 +13,7 @@ const IndiaTour = () => {
   ];
 
   return (
-    <Box w={{sm:"100%", md:"90%", lg:'71%'}} margin='auto' mt='30px'>
+    <Box w={{base:"100%", md:"90%", lg:'71%'}} margin='auto' mt='30px'>
       <Box w='89%' margin='auto'  mb='10px'>
         <Text textAlign='left' fontSize='24px' fontWeight='bold'>Ways to tour India</Text>
       </Box>
