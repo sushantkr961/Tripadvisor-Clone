@@ -1,13 +1,11 @@
-import { AdminNavbar } from "./AdminNavbar"
-import { UserListpage } from "./UserListpage"
+import { AdminNavbar } from "./AdminNavbar";
+import { UserListpage } from "./UserListpage";
 
-
-
-export const Adminpage=()=>{
-    
-    return <>
-        <AdminNavbar/>
-        <UserListpage/>
+export const Adminpage = () => {
+  return (
+    <>
+      <AdminNavbar />
+      <UserListpage />
     </>
-
-}
+  );
+};

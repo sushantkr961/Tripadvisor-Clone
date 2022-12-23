@@ -26,6 +26,7 @@ const LinkItems = [
   { name: "Orders", icon: BsCart3, href: "/profile/orders" },
   { name: "Address", icon: FaUserEdit, href: "/profile/address" },
   { name: "Support", icon: BiSupport, href: "/profile/support" },
+  { name: "User's List", icon: BiSupport, href: "/profile/admin" },
 ];
 
 export default function SimpleSidebar({ children }) {

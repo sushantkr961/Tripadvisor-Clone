@@ -1,18 +1,21 @@
-import data from "../../hotel.json";
+import data from "../../../hotel.json";
 import { Box, Button } from "@chakra-ui/react";
 import { Grid } from "@chakra-ui/react";
 import { HotelListCard } from "./HotelListCard";
 import { useState, useEffect } from "react";
 import { FcNumericalSorting21, FcNumericalSorting12 } from "react-icons/fc";
+// import { HotelList } from "./Hotellist";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
-export const HotelList = () => {
+const HotelList = () => {
+  const { dataofList } = useSelector((store) => store.data);
+  console.log(dataofList);
   // destructuring The data
   const [list, setList] = useState([]);
 
-  const { hotels } = data;
-
   useEffect(() => {
-    setList(hotels);
+    setList(dataofList);
   }, []);
   // console.log(results)
 
@@ -43,13 +46,9 @@ export const HotelList = () => {
     setList([...sortedData]);
   };
 
-  if (list.length === 0) {
-    return <>loading</>;
-  }
-
   return (
     <>
-      <Box color="Black">
+      <Box textAlign={"center"} color="Black">
         <Button m="2px" bg="white" onClick={sortListHighTolow}>
           High-To-low <FcNumericalSorting21 />
         </Button>
@@ -57,8 +56,10 @@ export const HotelList = () => {
           Low-To-High <FcNumericalSorting12 />
         </Button>
       </Box>
-      <Box bg="#d7d7d7" w="100%" p={4} color="black" ml={"none"}>
+      <Box bg="#d7d7d7" w="100%" p={8} color="black" ml={"none"}>
         <Grid
+          borderRadius={"8px"}
+          mb={2}
           templateColumns="repeat(1, 1fr)"
           gap={{ base: "2", xs: "3", lg: "5px", xl: "6px" }}
           w={{ base: "100%", lg: "100%", xl: "70%" }}
@@ -68,7 +69,9 @@ export const HotelList = () => {
           {list?.map((e) => {
             return (
               <>
-                <HotelListCard data={e} />
+                <Link to={"/hotels/" + e._id}>
+                  <HotelListCard data={e} />
+                </Link>
               </>
             );
           })}
@@ -77,3 +80,5 @@ export const HotelList = () => {
     </>
   );
 };
+
+export default HotelList;
