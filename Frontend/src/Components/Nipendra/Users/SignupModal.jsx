@@ -14,29 +14,35 @@ import {
   Stack,
   useToast,
   useDisclosure,
+  AlertIcon,
+  Alert,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/react";
 
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import signup from "../../../Redux/Users/Signup/signup.action";
-import PasswordInput from "./MyComponents/PasswordInput";
 import SignupButton from "./MyComponents/SignupButton";
 import SignupFooter from "./MyComponents/SignupFooter";
 import SocialLogin from "./MyComponents/SocialLogin";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 
 function SignupModal() {
+  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword2, setShowPassword2] = React.useState(false);
   const dispatch = useDispatch();
-  const toast = useToast();
-  const [count, setCount] = useState(0);
   const [user, setUser] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
+    lname: "",
     email: "",
     password: "",
+    password_confirmation: "",
+    tc: true,
   });
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isLoading, isSignUp, errorMessage } = useSelector(
+  const { isLoading, errorMessage, successMessage } = useSelector(
     (store) => store.signup
   );
   const handleChange = (e) => {
@@ -45,54 +51,19 @@ function SignupModal() {
   };
 
   const handleSubmit = (e) => {
+    console.log(user);
     e.preventDefault();
-    if (user.firstName && user.lastName && user.email && user.password) {
-      dispatch(signup(user));
-    }
+    dispatch(signup(user));
+
     setUser({
-      firstName: "",
-      lastName: "",
+      name: "",
+      lname: "",
       email: "",
       password: "",
+      password_confirmation: "",
+      tc: true,
     });
   };
-  const handleToast = () => {
-    if (
-      errorMessage.status === 402 &&
-      !errorMessage.idToken &&
-      !isSignUp &&
-      count === 0
-    ) {
-      toast({
-        title: "Already have an account",
-        status: "error",
-        position: "bottom",
-        isClosable: true,
-      });
-      setCount((prev) => prev + 1);
-
-      return;
-    }
-    if (
-      errorMessage.idToken &&
-      errorMessage.status !== 402 &&
-      isSignUp &&
-      count === 0
-    ) {
-      toast({
-        title: "Account Created Successfully",
-        description: "Login to continue.",
-        status: "success",
-        position: "bottom",
-        isClosable: true,
-      });
-      setCount((prev) => prev + 1);
-      return;
-    }
-  };
-  useEffect(() => {
-    handleToast();
-  }, [errorMessage]);
 
   return (
     <Box w={{ base: "95%", lg: "50%" }} m={"auto"} mt={4}>
@@ -105,33 +76,47 @@ function SignupModal() {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
+            <Box>
+              {errorMessage ? (
+                <Alert fontWeight={"bold"} status="error" bg={"transparent"}>
+                  <AlertIcon />
+                  {errorMessage}
+                </Alert>
+              ) : null}
+              {successMessage ? (
+                <Alert fontWeight={"bold"} status="success" bg={"transparent"}>
+                  <AlertIcon />
+                  {successMessage}
+                </Alert>
+              ) : null}
+            </Box>
             <form onSubmit={handleSubmit}>
-              <FormControl isRequired>
+              <FormControl>
                 <Stack direction={"row"}>
-                  <FormControl isRequired>
+                  <FormControl>
                     <FormLabel>First Name</FormLabel>
                     <Input
                       placeholder={"Enter First Name"}
                       onChange={handleChange}
                       type="text"
-                      name="firstName"
-                      value={user.firstName}
+                      name="name"
+                      value={user.name}
                     />
                   </FormControl>
 
-                  <FormControl isRequired>
+                  <FormControl>
                     <FormLabel>Last Name</FormLabel>
                     <Input
                       placeholder={"Enter Last Name"}
                       onChange={handleChange}
-                      name="lastName"
-                      value={user.lastName}
                       type="text"
+                      name="lname"
+                      value={user.lname}
                     />
                   </FormControl>
                 </Stack>
 
-                <FormControl isRequired>
+                <FormControl>
                   <FormLabel>Email</FormLabel>
                   <Input
                     placeholder={"Enter Email"}
@@ -141,15 +126,53 @@ function SignupModal() {
                     type="email"
                   />
                 </FormControl>
-
-                <FormControl isRequired>
+                <FormControl id="password">
                   <FormLabel>Password</FormLabel>
-                  <PasswordInput
-                    name={"password"}
-                    value={user.password}
-                    onChange={handleChange}
-                  />
+                  <InputGroup>
+                    <Input
+                      placeholder={"Enter Password"}
+                      onChange={handleChange}
+                      name="password"
+                      value={user.password}
+                      type={showPassword ? "text" : "password"}
+                    />
+                    <InputRightElement h={"full"}>
+                      <Button
+                        type={showPassword ? "text" : "password"}
+                        variant={"ghost"}
+                        onClick={() =>
+                          setShowPassword((showPassword) => !showPassword)
+                        }
+                      >
+                        {showPassword ? <ViewIcon /> : <ViewOffIcon />}
+                      </Button>
+                    </InputRightElement>
+                  </InputGroup>
                 </FormControl>
+                <FormControl id="password_confirmation">
+                  <FormLabel>Confirm Password</FormLabel>
+                  <InputGroup>
+                    <Input
+                      placeholder={"Enter Confirm Password"}
+                      onChange={handleChange}
+                      name="password_confirmation"
+                      value={user.password_confirmation}
+                      type={showPassword2 ? "text" : "password"}
+                    />
+                    <InputRightElement h={"full"}>
+                      <Button
+                        type={showPassword2 ? "text" : "password"}
+                        variant={"ghost"}
+                        onClick={() =>
+                          setShowPassword2((showPassword2) => !showPassword2)
+                        }
+                      >
+                        {showPassword2 ? <ViewIcon /> : <ViewOffIcon />}
+                      </Button>
+                    </InputRightElement>
+                  </InputGroup>
+                </FormControl>
+
                 <Checkbox mt={6}>
                   Yes, inform me on deals & new features. I can opt out at any
                   time.
@@ -166,7 +189,6 @@ function SignupModal() {
                   color="white"
                   bg="black"
                   type="submit"
-                  onClick={handleToast}
                 >
                   Join
                 </Button>

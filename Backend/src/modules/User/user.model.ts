@@ -9,7 +9,7 @@ const userInfo = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
-  lname: { type: String },
+  lname: { type: String, trim: true },
   email: { type: String, required: true, trim: true },
   role: { type: String, enum: ["admin", "user"], default: "user" },
   password: { type: String, required: true, trim: true },

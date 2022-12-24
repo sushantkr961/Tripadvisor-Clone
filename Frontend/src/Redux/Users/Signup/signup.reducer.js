@@ -1,49 +1,73 @@
 import {
-  SIGN_UP_ERROR,
-  SIGN_UP_EXISTS,
-  SIGN_UP_LOADING,
-  SIGN_UP_SUCCESS,
+  SIGNUP_ERROR,
+  SIGNUP_ERROR_CONF_PASSWORD,
+  SIGNUP_ERROR_EMPTY_FIELD,
+  SIGNUP_ERROR_EXISTS,
+  SIGNUP_LOADING,
+  SIGNUP_SUCCESS,
 } from "./signup.type";
 
 const initialState = {
-  isSignUp: false,
   isLoading: false,
   isError: false,
   errorMessage: "",
+  successMessage: "",
 };
 
 function signupReducer(state = initialState, action) {
   switch (action.type) {
-    case SIGN_UP_LOADING: {
+    case SIGNUP_LOADING: {
       return {
         ...state,
         isLoading: true,
       };
     }
-    case SIGN_UP_SUCCESS: {
+    case SIGNUP_SUCCESS: {
       return {
         ...state,
         isLoading: false,
-        isSignUp: true,
+        isError: false,
+        errorMessage: "",
+        successMessage: action.payload,
+      };
+    }
+    case SIGNUP_ERROR: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
         errorMessage: action.payload,
+        successMessage: "",
+      };
+    }
+    case SIGNUP_ERROR_EMPTY_FIELD: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        errorMessage: action.payload,
+        successMessage: "",
+      };
+    }
+    case SIGNUP_ERROR_CONF_PASSWORD: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        errorMessage: action.payload,
+        successMessage: "",
+      };
+    }
+    case SIGNUP_ERROR_EXISTS: {
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        errorMessage: action.payload,
+        successMessage: "",
       };
     }
 
-    case SIGN_UP_ERROR: {
-      return {
-        ...state,
-        isError: true,
-        isLoading: false,
-      };
-    }
-    case SIGN_UP_EXISTS: {
-      return {
-        ...state,
-        isSignUp: false,
-        isLoading: false,
-        errorMessage: action.payload,
-      };
-    }
     default: {
       return state;
     }

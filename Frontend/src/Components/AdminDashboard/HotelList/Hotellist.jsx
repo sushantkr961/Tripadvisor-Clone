@@ -24,7 +24,7 @@ const HotelList = () => {
 
   //Sorting Functionality HighTolow
   const sortListHighTolow = () => {
-    let sortedData = list.sort((a, b) => {
+    let sortedData = dataofList.sort((a, b) => {
       if (a.max_price_in_usd < b.max_price_in_usd) {
         return 1;
       }
@@ -37,7 +37,7 @@ const HotelList = () => {
   };
   //Sorting Functionality lowToHigh
   const sortListlowToHigh = () => {
-    let sortedData = list.sort((a, b) => {
+    let sortedData = dataofList.sort((a, b) => {
       if (a.max_price_in_usd < b.max_price_in_usd) {
         return -1;
       }
@@ -69,7 +69,7 @@ const HotelList = () => {
           bg="white "
         >
           {/* map the hotelList card */}
-          {list?.map((e) => {
+          {dataofList?.map((e) => {
             return (
               <>
                 <Link

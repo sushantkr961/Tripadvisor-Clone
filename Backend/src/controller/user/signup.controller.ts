@@ -37,6 +37,7 @@ class SignupController {
             const hashPassword = await bcrypt.hash(password, salt);
             const newUser = new UserModel({
               name: name,
+              lname: lname,
               email: email,
               password: hashPassword,
               tc: tc,

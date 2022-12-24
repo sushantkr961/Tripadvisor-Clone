@@ -90,13 +90,16 @@ const Searchbar = () => {
           >
             {debData?.map((item) => {
               return (
-                <Link key={item._id} to={"/hotels"}>
+                <Link
+                  onClick={() => dispatch(hotelList(item.city))}
+                  key={item._id}
+                  to={"/hotels"}
+                >
                   <Flex
                     justifyContent={"space-between"}
                     textTransform={"capitalize"}
                     textAlign={"left"}
                     p={2}
-                    onClick={() => dispatch(hotelList(item.city))}
                   >
                     <Text fontWeight={"bold"}>
                       {item?.city +
