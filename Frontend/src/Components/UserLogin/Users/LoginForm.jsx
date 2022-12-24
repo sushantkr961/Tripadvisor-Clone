@@ -10,10 +10,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import SignupModal from "./SignupModal";
-import PasswordInput from "./MyComponents/PasswordInput";
-import login, { getUser } from "../../../Redux/Users/Login/login.action";
+import PasswordInput from "./PasswordInput";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import login from "../../../Redux/Users/Login/login.action";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     dispatch(login(user));
-    
+
     setUser({
       email: "",
       password: "",

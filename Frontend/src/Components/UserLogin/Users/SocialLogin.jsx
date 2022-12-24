@@ -2,11 +2,11 @@ import { Box, Button, Stack } from "@chakra-ui/react";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
+import { useDispatch } from "react-redux";
 import {
   signInWithFacebook,
   signInWithGoogle,
-} from "./../../../../Redux/Users/Login/login.action";
-import { useDispatch } from "react-redux";
+} from "../../../Redux/Users/Login/login.action";
 const SocialLogin = () => {
   const dispatch = useDispatch();
   const handleGoogle = () => {

@@ -20,14 +20,14 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import signup from "../../../Redux/Users/Signup/signup.action";
-import SignupButton from "./MyComponents/SignupButton";
-import SignupFooter from "./MyComponents/SignupFooter";
-import SocialLogin from "./MyComponents/SocialLogin";
+import SignupButton from "./SignupButton";
+import SignupFooter from "./SignupFooter";
+import SocialLogin from "./SocialLogin";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import signup from './../../../Redux/Users/Signup/signup.action';
 
 function SignupModal() {
   const [showPassword, setShowPassword] = React.useState(false);

@@ -1,7 +1,7 @@
 import { Box, Img, Link, Text } from "@chakra-ui/react";
 import Carousel from "@itseasy21/react-elastic-carousel";
 import React from "react";
-import Card from "./Carousel/Card";
+import Card from "../../Homepage/Carousel/Card";
 import winner from "../assests/winners.jpeg";
 
 const Temple = () => {

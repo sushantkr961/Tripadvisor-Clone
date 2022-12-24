@@ -1,5 +1,5 @@
 import { Box, Button, Image, Link, Text } from "@chakra-ui/react";
-import Card from "./Carousel/Card";
+import Card from "../../Homepage/Carousel/Card";
 import Carousel from "@itseasy21/react-elastic-carousel";
 import React from "react";
 
@@ -28,7 +28,10 @@ const GetOut = () => {
             Best of the best tours, attractions and activites you won't want to
             miss.
           </Text>
-          <Link textDecoration="none" href="https://www.tripadvisor.in/Attractions-g293860-Activities-India.html">
+          <Link
+            textDecoration="none"
+            href="https://www.tripadvisor.in/Attractions-g293860-Activities-India.html"
+          >
             <Button
               p="10px 15px"
               border="none"

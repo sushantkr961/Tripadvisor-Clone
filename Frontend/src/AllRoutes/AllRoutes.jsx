@@ -1,25 +1,24 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "../Components/Nipendra/Users/Login";
-import Home from "../Components/Sushant/Pages/Home";
-import Profile from "../Components/Nipendra/Profile/Profile";
-import Bihar from "../Components/Sushant/Pages/Bihar";
-import ErrorPage from "../Components/Sushant/Pages/ErrorPage";
+import Home from "../Components/Homepage/Pages/Home";
+import Bihar from "../Components/Homepage/Pages/Bihar";
+import ErrorPage from "../Components/Homepage/Pages/ErrorPage";
 import HotelList from "./../Components/AdminDashboard/HotelList/Hotellist";
-import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
+import HotelDetails from "../Components/Homepage/Pages/HotelDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import TravellerDetails from "../Components/Ravi/TravellerDetails";
 import PaymentDetails from "../Components/Ravi/PaymentDetails";
 import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
-import Maharashtra from "../Components/Sushant/Pages/Maharastra";
-import Rajasthan from "../Components/Sushant/Pages/Rajasthan";
-import MadhyaPradesh from "../Components/Sushant/Pages/MadhyaPradesh";
-import Kerela from "../Components/Sushant/Pages/Kerela";
-import Assam from "../Components/Sushant/Pages/Assam";
-import Jammu from "../Components/Sushant/Pages/Jammu";
-import Uttrakhand from "../Components/Sushant/Pages/Uttrakhand";
-import UttarPradesh from "../Components/Sushant/Pages/UttarPradesh";
-import { SingleUser } from "../Components/AdminDashboard/SingleUserPage";
+import Maharashtra from "../Components/Homepage/Pages/Maharastra";
+import Rajasthan from "../Components/Homepage/Pages/Rajasthan";
+import MadhyaPradesh from "../Components/Homepage/Pages/MadhyaPradesh";
+import Kerela from "../Components/Homepage/Pages/Kerela";
+import Assam from "../Components/Homepage/Pages/Assam";
+import Jammu from "../Components/Homepage/Pages/Jammu";
+import Uttrakhand from "../Components/Homepage/Pages/Uttrakhand";
+import UttarPradesh from "../Components/Homepage/Pages/UttarPradesh";
+import Profile from "./../Components/UserLogin/Profile/Profile";
+import Login from "../Components/UserLogin/Users/Login";
 
 const AllRoutes = () => {
   return (
@@ -48,7 +47,6 @@ const AllRoutes = () => {
         <Route path={"/uttarpradeshtourism"} element={<UttarPradesh />} />
         <Route path={"*"} element={<ErrorPage />} />
         <Route path={"/userdetails"} element={<TravellerDetails />} />
-        {/* <Route path={"/userdetails/:id"} element={<SingleUser />} /> */}
 
         <Route
           path={"/payment"}

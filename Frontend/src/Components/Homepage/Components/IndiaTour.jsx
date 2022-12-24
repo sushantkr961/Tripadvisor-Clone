@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 import Carousel from "@itseasy21/react-elastic-carousel";
 import React from "react";
 import { Link } from "react-router-dom";
-import Card from "./Carousel/Card";
+import Card from "../../Homepage/Carousel/Card";
 
 const IndiaTour = () => {
   const breakPoints = [
