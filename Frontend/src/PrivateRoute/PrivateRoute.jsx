@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   const { isAuth } = useSelector((store) => store.login);
 
   if (!isAuth) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/login"} />;
   }
   return children;
 };

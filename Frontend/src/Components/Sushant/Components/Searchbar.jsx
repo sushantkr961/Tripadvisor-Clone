@@ -71,7 +71,7 @@ const Searchbar = () => {
             <Input
               type="search"
               onChange={handleChange}
-              placeholder="Where to?"
+              placeholder="Where to? Search Goa"
               outline="none"
               w="100%"
               padding="15px 50px"
