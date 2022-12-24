@@ -1,7 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-import data from "../../../hotel.json";
+// import data from "../../../hotel.json";
 import {
   Box,
   Button,
@@ -32,23 +32,15 @@ import { RiVipFill } from "react-icons/ri";
 import { useEffect } from "react";
 import Reviews from "../Components/Reviews";
 import { useSelector } from "react-redux";
-
-const image = [
-  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/highland_1_watermarked_image_1024.jpeg",
-  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/highland-pool_1_watermarked_image_1024.jpeg",
-  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/dsc01551_watermarked_image_1024.jpeg",
-  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/dsc01552_watermarked_image_1024.jpeg",
-  "https://d2vcelvjdj7n25.cloudfront.net/media/property_photos/image_watermarked_1024/15323035/dsc01558_watermarked_image_1024.jpeg",
-];
+import { Link } from "react-router-dom";
 
 const HotelDetails = () => {
   const { singleData, isLoading, isError } = useSelector((store) => store.data);
-  //   console.log(data.hotels[0].lng);
-  console.log(singleData);
+  console.log("data=", singleData);
   useEffect(() => {
     const iframeData = document.getElementById("iframeId");
-    const lat = data.hotels[0].lat;
-    const lng = data.hotels[0].lng;
+    const lat = singleData.lat;
+    const lng = singleData.lng;
     iframeData.src = `https://maps.google.com/maps?q=${lat},${lng}&hl=es;&output=embed`;
   });
 
@@ -61,8 +53,9 @@ const HotelDetails = () => {
           fontSize={30}
           textAlign={"left"}
           color={"black"}
+          textTransform={"capitalize"}
         >
-          {data.hotels[0].city_slug}
+          {singleData.city_slug}
         </chakra.h3>
         <Flex>
           <MdRateReview fontSize={20} />
@@ -74,7 +67,7 @@ const HotelDetails = () => {
             textAlign={"left"}
             color={"black"}
           >
-            {data.hotels[0].score} reviews
+            {singleData.score} reviews
           </chakra.h5>
         </Flex>
         <Flex>
@@ -86,36 +79,23 @@ const HotelDetails = () => {
             textAlign={"left"}
             color={"black"}
           >
-            {data.hotels[0].city}, {data.hotels[0].state_slug},
-            {data.hotels[0].state},{data.hotels[0].country}
+            {singleData.city}, {singleData.state_slug},{singleData.state},
+            {singleData.country}
           </chakra.h5>
         </Flex>
       </Box>
       <Flex flexDir={{ base: "column", md: "row", lg: "row" }}>
         <Box w={{ base: "100%", md: "70%" }} mr={"10px"}>
           <Carousel>
-            {/* <div>
-              <img src={data.hotels[0].images_large[1]} alt="images" />
-            </div>
-            <div>
-              <img src={data.hotels[0].images_large[2]} alt="images" />
-            </div>
-            <div>
-              <img src={data.hotels[0].images_large[3]} alt="images" />
-            </div>
-            <div>
-              <img src={data.hotels[0].images_large[4]} alt="images" />
-            </div> */}
-            {/* {data.map?.((el,i) => {
-              return (<div key={i}>
-                <img src={el[i].images_large[i]} alt="images" />
-              </div>)
-            })} */}
-            {image?.map((el, i) => {
+            {singleData.images_large?.map((el, i) => {
               return (
-                <div>
-                  <img src={el} alt="images" />
-                </div>
+                <Box border={"2px"} h={"600px"}>
+                  <img
+                    src={el}
+                    alt="images"
+                    style={{ height: "100%", width: "100%" }}
+                  />
+                </Box>
               );
             })}
           </Carousel>
@@ -187,13 +167,15 @@ const HotelDetails = () => {
               fontWeight={"semibold"}
             />
           </Box>
-          <Button
-            bgColor={"teal"}
-            color={"white"}
-            _hover={{ color: "teal", bgColor: "white", border: "2px" }}
-          >
-            Book Now
-          </Button>
+          <Link to={"/userdetails"}>
+            <Button
+              bgColor={"teal"}
+              color={"white"}
+              _hover={{ color: "teal", bgColor: "white", border: "2px" }}
+            >
+              Book Now
+            </Button>
+          </Link>
         </Box>
       </Flex>
       <Box>
@@ -211,12 +193,12 @@ const HotelDetails = () => {
           <Box w={{ base: "100%", md: "55%" }}>
             <Box m={5}>
               <Text fontSize={"xl"}>
-                {data.hotels[0].city_slug} Hotel truly yours, stands out from
-                the others by offering a product tailor-made towards our
-                customer's wellbeing. We provide a seamless experience of
-                comfort for the 21st century traveller, who is looking for the
-                ease of home with the sophistication of an evolved, contemporary
-                hospitality product.
+                {singleData.city_slug} Hotel truly yours, stands out from the
+                others by offering a product tailor-made towards our customer's
+                wellbeing. We provide a seamless experience of comfort for the
+                21st century traveller, who is looking for the ease of home with
+                the sophistication of an evolved, contemporary hospitality
+                product.
               </Text>
             </Box>
           </Box>

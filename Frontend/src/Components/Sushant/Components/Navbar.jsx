@@ -13,9 +13,8 @@ import {} from "@chakra-ui/icons";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { MdOutlineNotifications } from "react-icons/md";
 import { FiHeart } from "react-icons/fi";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
-import { logout } from "../../../Redux/Users/Login/login.action";
 import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
 
@@ -50,13 +49,15 @@ export default function Navbar() {
           align={"center"}
         >
           <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-            <Image
-              src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
-              textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              fontFamily={"heading"}
-              color={useColorModeValue("gray.800", "white")}
-              w="200px"
-            />
+            <Link to={"/"}>
+              <Image
+                src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_lockup_horizontal_secondary_registered.svg"
+                textAlign={useBreakpointValue({ base: "center", md: "left" })}
+                fontFamily={"heading"}
+                color={useColorModeValue("gray.800", "white")}
+                w="200px"
+              />
+            </Link>
           </Flex>
           <Stack
             flex={{ base: 1, md: 0 }}
