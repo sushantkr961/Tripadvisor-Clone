@@ -6,7 +6,7 @@ export const AdminNavbar=()=>{
     
     return <>
         <Box>
-             <Button>User-List</Button>
+             <Button>User-Lis</Button>
         </Box>
     </>
 
