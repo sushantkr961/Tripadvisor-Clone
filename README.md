@@ -20,6 +20,7 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 - Make payment
 - Book your trip
 - Admin dashboard
+- Resposive for all type of displays
 
 ## Snapshots of the project
 
@@ -55,7 +56,7 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 
 #### Sushant Kumar
 > Github: [Sushant Kumar](https://github.com/sushantkr961)
-Team lead, daily POC and worked on landing page, about page, faq page, contact page, navbar, tourism page, hotel details page
+Team lead, daily POC and worked on landing page, about page, navbar, tourism page, hotel details page
 
 #### Nipendra Soni
 >Github: [Nipendra Soni](https://github.com/rsoni2843)
