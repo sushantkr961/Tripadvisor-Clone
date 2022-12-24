@@ -28,31 +28,35 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 ![LandingPage](Frontend/src/Components/Homepage/assests/readme/LandingPage.png)
 *******************************************************************************
 
-2. CozyTrip hotels page
-![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
+2. Tripadvisor hotels page
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/Hotel Details.png)
 *******************************************************************************
 
-3. Signup and sign-in pages
-![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
+3. POST Hotel Dashboard (Only for admin)
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/PostAdmin.png)
+*******************************************************************************
+
+4. Signup and sign-in pages
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/SignIn Page.png)
 *******************************************************************************
 
 4. Payment Page
-![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/Traveller Details.png)
 *******************************************************************************
 
-5. Admin Dashboard
-![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
+6. Admin Dashboard (Only for admin)
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/All users admin.png)
 *******************************************************************************
 
-6. Footer section
-![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
+7. Footer section
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/Footer.png)
 *******************************************************************************
 
- 
+<!--  
 ## Demo
 >Link - [TravelGo](https://tripadvisor-rsoni2843.web.app/)
 >Project demonstration link- 
-<a href="/////">click here</a>
+<a href="#">click here</a> -->
 
 ## Authors
 
