@@ -50,7 +50,14 @@ const AllRoutes = () => {
         <Route path={"/userdetails"} element={<TravellerDetails />} />
         {/* <Route path={"/userdetails/:id"} element={<SingleUser />} /> */}
 
-        <Route path={"/payments"} element={<PaymentDetails />} />
+        <Route
+          path={"/payment"}
+          element={
+            <PrivateRoute>
+              <PaymentDetails />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<ErrorPage />} />
         <Route path={"/addhotel"} element={<AdminAddHotel />} />
       </Routes>
