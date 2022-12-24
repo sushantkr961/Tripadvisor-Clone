@@ -253,7 +253,7 @@ const HotelDetails = () => {
                 </Box>
                 <Box>
                   <Flex mt={1}>
-                    <TbParking fontSize={20} /> Suites
+                    <TbParking fontSize={20}/> Suites
                   </Flex>
                 </Box>
               </Flex>

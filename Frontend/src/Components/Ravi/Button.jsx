@@ -1,12 +1,11 @@
 import {Modal,ModalOverlay,ModalContent,ModalHeader,ModalFooter,ModalBody,ModalCloseButton,} from '@chakra-ui/react';
 import { Button,Text,Flex } from '@chakra-ui/react';
 import React from 'react';
-import { useDisclosure } from '@chakra-ui/react';
 import {FaHotel} from "react-icons/fa"
 import {SiHandshake} from "react-icons/si"
 
 
-export default function BackdropExample() {
+export default function BackdropExample({isOpen, onOpen, onClose}) {
     const OverlayOne = () => (
       <ModalOverlay
         bg='blackAlpha.300'

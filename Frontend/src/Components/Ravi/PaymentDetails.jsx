@@ -9,10 +9,44 @@ import {BsCalendar2DateFill,BsPinMapFill} from "react-icons/bs";
 import {TbNumbers} from "react-icons/tb"
 import {GiBlackFlag} from "react-icons/gi"
 import {MdMapsHomeWork} from "react-icons/md"
-import BackdropExample from "./Button"
+import BackdropExample from "./Button";
+import { useDisclosure } from '@chakra-ui/react';
 
 export default function PaymentDetails() {
-  return (
+  const { isOpen, onOpen, onClose } = useDisclosure()
+const [card,setCard]=useState({cardName:"",cardNumber:"",expiryDate:"",cardCvv:"",country:"",pincode:""})
+console.log(card)
+
+
+
+  const {cardName,
+    cardNumber,
+    expiryDate,
+    cardCvv,
+    country,
+    pincode}=card
+
+
+    const handleChange=(e)=>{
+      const {name,value}=e.target;
+      setCard({...card,[name]:value})
+
+    }
+
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+
+        if(card.cardName=="" || card.cardNumber=="" || card.cardCvv=="" || card.expiryDate=="" || card.country=="" || card.pincode==""){
+      alert("PLEASE FILL ALL THE DETAILS")
+        }
+        else{
+          console.log("ravi")
+          onOpen()
+        }
+    }
+
+
+return (
     <Box className='formbox' width={["100%","100%","100%","100%","60%"]}  padding={{base:"10px",sm:"50px",md:"50px",lg:"70px"}}>
       <Flex gap="3%" alignItems="center">
       <GiReceiveMoney size="10%" />
@@ -30,13 +64,13 @@ export default function PaymentDetails() {
         <AiFillIdcard className='icons'/>
         <Text className="Text1">Cardholder Name</Text>
         </Flex>
-        <Input placeholder='Cardholder Name' mt="8px"/>
+        <Input placeholder='Cardholder Name' mt="8px" name="cardName" value={cardName} onChange={handleChange}/>
         
         <Flex mt="80px"  className='flex1'>
-        <HiCreditCard className='icons'/>
-        <Text className="Text1" >Crdait/debit card number</Text>
+        <HiCreditCard className='icons' />
+        <Text className="Text1" >Credit/debit card number</Text>
         </Flex>
-        <Input placeholder='Enter Card Number' mt="8px"/>
+        <Input placeholder='Enter Card Number' mt="8px" name="cardNumber" value={cardNumber} onChange={handleChange}/>
       </Box>
 
       <Flex mt="80px" gap="40%"  flexDirection={{base:"column",sm:"column",md:"row",lg:"row"}}>
@@ -45,14 +79,14 @@ export default function PaymentDetails() {
               <BsCalendar2DateFill className='icons'/>
               <Text className="Text1" >Card Expiry Date</Text>
             </Flex>
-             <Input type="date" placeholder='Enter Gmail Here'className='inputbox'/>
+             <Input type="date" placeholder='Enter Card Expiry Date'className='inputbox' name="expiryDate" value={expiryDate} onChange={handleChange}/>
           </Box>
           <Box>
             <Flex className='flex1'>
               <TbNumbers className='icons'/>
               <Text className="Text1">CVV Code </Text>
             </Flex>
-             <Input placeholder='Enter Gmail Here' className='inputbox' />
+             <Input placeholder='Enter CVV Code' className='inputbox' name="cardCvv" value={cardCvv} onChange={handleChange} />
           </Box>
           
         </Flex>
@@ -71,20 +105,20 @@ export default function PaymentDetails() {
               <GiBlackFlag className='icons'/>
               <Text className='Text1'>Country</Text>
             </Flex>
-             <Input placeholder='Enter Gmail Here'className='inputbox'/>
+             <Input placeholder='Enter Gmail Here'className='inputbox' name="country" value={country} onChange={handleChange}/>
           </Box>
           <Box>
             <Flex className='flex1'>
               <BsPinMapFill className='icons'/>
               <Text className='Text1'>Postal/ZipCode</Text>
             </Flex>
-             <Input placeholder='Enter Gmail Here' className='inputbox'/>
+             <Input placeholder='Enter Gmail Here' className='inputbox' name="pincode" value={pincode} onChange={handleChange}/>
           </Box>
           
         </Flex>
 
-        {/* <Button className='button'>Next</Button> */}
-        <BackdropExample />
+        <Button className='button' onClick={handleSubmit}>Next</Button>
+        <BackdropExample isOpen={isOpen} onOpen={onOpen} onClose={onClose}  />
 
     </Box>
   )
