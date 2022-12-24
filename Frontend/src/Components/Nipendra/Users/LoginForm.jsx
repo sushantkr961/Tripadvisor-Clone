@@ -11,28 +11,27 @@ import {
 } from "@chakra-ui/react";
 import SignupModal from "./SignupModal";
 import PasswordInput from "./MyComponents/PasswordInput";
-import login from "../../../Redux/Users/Login/login.action";
+import login, { getUser } from "../../../Redux/Users/Login/login.action";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const { isLoading, isAuth, noEmail, incorrectEmail } = useSelector(
+  const { isLoading, isAuth, errorMessage, successMessage } = useSelector(
     (store) => store.login
   );
+  // let info = localStorage.getItem("token");
   const [user, setUser] = useState({ email: "", password: "" });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user.email && user.password) {
-      dispatch(login(user));
-    }
 
+    dispatch(login(user));
+    
     setUser({
       email: "",
       password: "",
@@ -61,25 +60,26 @@ const LoginForm = () => {
           rounded="md"
           bg="white"
         >
-          {noEmail ? (
-            <Alert bg="none" status="error">
+          {errorMessage ? (
+            <Alert fontWeight={"bold"} status="error" bg={"transparent"}>
               <AlertIcon />
-              Email does not exists. Please Register.
+              {errorMessage}
             </Alert>
-          ) : incorrectEmail ? (
-            <Alert bg="none" status="warning">
+          ) : null}
+          {successMessage ? (
+            <Alert fontWeight={"bold"} status="success" bg={"transparent"}>
               <AlertIcon />
-              Incorrect email or password.
+              {successMessage}
             </Alert>
           ) : null}
           <FormControl isRequired>
             <FormLabel>Email</FormLabel>
             <Input
+              onChange={handleChange}
               placeholder="Enter Email"
               name="email"
               value={user.email}
               type="email"
-              onChange={handleChange}
             />
           </FormControl>
           <FormControl isRequired>

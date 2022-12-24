@@ -1,6 +1,6 @@
-const SIGN_UP_LOADING = "users/signup/loading";
-const SIGN_UP_SUCCESS = "users/signup/success";
-const SIGN_UP_ERROR = "users/signup/error";
-const SIGN_UP_EXISTS = "users/signup/exists";
-
-export { SIGN_UP_LOADING, SIGN_UP_SUCCESS, SIGN_UP_ERROR, SIGN_UP_EXISTS };
+export const SIGNUP_LOADING = "auth/signup/loading";
+export const SIGNUP_SUCCESS = "auth/signup/success";
+export const SIGNUP_ERROR = "auth/signup/error";
+export const SIGNUP_ERROR_EXISTS = "auth/signup/exists";
+export const SIGNUP_ERROR_CONF_PASSWORD = "auth/signup/conf_password";
+export const SIGNUP_ERROR_EMPTY_FIELD = "auth/signup/empty_field";

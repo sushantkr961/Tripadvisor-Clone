@@ -7,6 +7,7 @@ import Bihar from "../Components/Sushant/Pages/Bihar";
 import ErrorPage from "../Components/Sushant/Pages/ErrorPage";
 import HotelList from "./../Components/AdminDashboard/HotelList/Hotellist";
 import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import TravellerDetails from "../Components/Ravi/TravellerDetails";
 import PaymentDetails from "../Components/Ravi/PaymentDetails";
 import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel"
@@ -27,7 +28,14 @@ const AllRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path={"/hotels"} element={<HotelList />} />
         <Route path={"/hotels/:id"} element={<HotelDetails />} />
-        <Route path={"/profile/*"} element={<Profile />} />
+        <Route
+          path={"/profile/*"}
+          element={
+            <PrivateRoute>
+              <Profile />
+            </PrivateRoute>
+          }
+        />
         <Route path={"/bihartourism"} element={<Bihar />} />
         <Route path={"/maharastratourism"} element={<Maharashtra />} />
         <Route path={"/rajasthantourism"} element={<Rajasthan />} />

@@ -16,31 +16,31 @@ import { BiSupport } from "react-icons/bi";
 import { FaUserEdit } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { AiOutlinePoweroff } from "react-icons/ai";
+import { GrUserAdmin } from "react-icons/gr";
 // import { getUser, logout } from "../../../redux/User/Login/login.action";
 import { useDispatch, useSelector } from "react-redux";
 import MobileNav from "./MobileProfileComponent";
-import { logout } from "../../../Redux/Users/Login/login.action";
+import { getUser, logout } from "../../../Redux/Users/Login/login.action";
 
 const LinkItems = [
   { name: "Account", icon: FiSettings, href: "/profile/account" },
   { name: "Orders", icon: BsCart3, href: "/profile/orders" },
   { name: "Address", icon: FaUserEdit, href: "/profile/address" },
   { name: "Support", icon: BiSupport, href: "/profile/support" },
-  { name: "User's List", icon: BiSupport, href: "/profile/admin" },
+  //   { name: "User's List", icon: BiSupport, href: "/profile/admin" },
 ];
 
 export default function SimpleSidebar({ children }) {
-  //   const { isAuth } = useSelector((store) => store.login);
-  //   const dispatch = useDispatch();
-
+  const { isAuth } = useSelector((store) => store.login);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  //   const token = localStorage.getItem("token");
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
 
-  //   useEffect(() => {
-  //     if (isAuth) {
-  //       dispatch(getUser(token));
-  //     }
-  //   }, []);
+  useEffect(() => {
+    if (isAuth) {
+      dispatch(getUser(token));
+    }
+  }, []);
   return (
     <Box minH="100vh">
       <SidebarContent
@@ -70,7 +70,7 @@ export default function SimpleSidebar({ children }) {
 }
 
 const SidebarContent = ({ onClose, children, ...rest }) => {
-  const { isAuth } = useSelector((store) => store.login);
+  const { isAuth, userInfo } = useSelector((store) => store.login);
   const dispatch = useDispatch();
 
   const handleAuth = () => {
@@ -78,6 +78,7 @@ const SidebarContent = ({ onClose, children, ...rest }) => {
       dispatch(logout());
     }
   };
+  console.log(userInfo);
   return (
     <Box
       bg={useColorModeValue("white", "gray.900")}
@@ -118,6 +119,19 @@ const SidebarContent = ({ onClose, children, ...rest }) => {
           </Flex>
         </NavLink>
       ))}
+      {userInfo?.User?.role === "admin" ? (
+        <NavLink
+          to={"/profile/admin"}
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.default
+          }
+        >
+          <Flex justifyContent={"space-between"} px={6} py={6}>
+            <Text color={"black"}>POST Hotels (Admin)</Text>
+            <Icon as={GrUserAdmin} />
+          </Flex>
+        </NavLink>
+      ) : null}
       <NavLink
         to={"/"}
         className={({ isActive }) =>
