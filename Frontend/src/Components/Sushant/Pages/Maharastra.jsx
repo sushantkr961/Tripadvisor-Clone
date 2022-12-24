@@ -1,5 +1,5 @@
 import React from "react";
-import maharastra from "../assests/maharastra.mp4";
+import uk from "../assests/uk.mp4";
 import {
   AspectRatio,
   Box,
@@ -15,7 +15,7 @@ const Maharashtra = () => {
   return (
     <Box w={{ base: "100%", md: "70%" }} margin="auto">
       <AspectRatio ratio={16 / 9} mb="30px">
-        <video src={maharastra} autoPlay loop muted />
+        <video src={uk} autoPlay loop muted />
       </AspectRatio>
       <Box>
         <Box>

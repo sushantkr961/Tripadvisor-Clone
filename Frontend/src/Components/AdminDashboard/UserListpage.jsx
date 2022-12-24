@@ -17,7 +17,7 @@ export const UserListpage = () => {
   const [user, setUser] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/user/getUsers")
+    fetch("https://travelgo-backend.vercel.app/user/getUsers")
       .then((res) => res.json())
       .then((res) => {
         const { users } = res;

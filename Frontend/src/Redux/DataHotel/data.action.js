@@ -13,7 +13,7 @@ import {
 
 const getData = (info) => (dispatch) => {
   dispatch({ type: DATA_LOADING });
-  fetch(`http://localhost:8080/hotel?query=${info}`)
+  fetch(`https://travelgo-backend.vercel.app/hotel?query=${info}`)
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
@@ -32,7 +32,7 @@ export const emptyData = () => ({ type: EMPTY_INPUT });
 export const hotelList = (info) => (dispatch) => {
   console.log(info);
   dispatch({ type: HOTEL_LIST_LOADING });
-  fetch(`http://localhost:8080/hotel?query=${info}`)
+  fetch(`https://travelgo-backend.vercel.app/hotel?query=${info}`)
     .then((response) => response.json())
     .then((response) => {
       dispatch({ type: HOTEL_LIST_SUCCESS, payload: response.hotels });
@@ -46,7 +46,7 @@ export const hotelList = (info) => (dispatch) => {
 export const singleHotel = (info) => (dispatch) => {
   dispatch({ type: HOTEL_SINGLE_LOADING });
   console.log(info);
-  fetch(`http://localhost:8080/hotel/${info}`)
+  fetch(`https://travelgo-backend.vercel.app/hotel/${info}`)
     .then((response) => response.json())
     .then((response) => {
       dispatch({ type: HOTEL_SINGLE_SUCCESS, payload: response });

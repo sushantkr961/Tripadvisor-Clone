@@ -14,7 +14,7 @@ import {
 } from "./login.type";
 
 const login = (info) => async (dispatch) => {
-  const loginUrl = "http://localhost:8080/user/login";
+  const loginUrl = "https://travelgo-backend.vercel.app/user/login";
   // dispatch({ type: LOGIN_LOADING });
   // try {
   //   let res = await axios.post(
@@ -59,7 +59,7 @@ const login = (info) => async (dispatch) => {
   }
 };
 export const getUser = (info) => async (dispatch) => {
-  const loggedUserUrl = "http://localhost:8080/user/loggedUser";
+  const loggedUserUrl = "https://travelgo-backend.vercel.app/user/loggedUser";
 
   axios.defaults.headers.common["authorization"] = `Bearer ${info}`;
 

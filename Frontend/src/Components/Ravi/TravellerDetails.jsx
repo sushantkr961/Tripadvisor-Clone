@@ -131,7 +131,7 @@ export default function TravellerDetails() {
           of the listed hotels
         </Text>
         <Input className="input1" placeholder="Enter Pickup Location" />
-        <Link to={"/payments"}>
+        <Link to={"/payment"}>
           <Button className="button">Next</Button>
         </Link>
       </Box>

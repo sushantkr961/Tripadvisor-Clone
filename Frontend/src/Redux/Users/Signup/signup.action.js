@@ -7,7 +7,7 @@ import {
   SIGNUP_LOADING,
   SIGNUP_SUCCESS,
 } from "./signup.type";
-const registerUrl = "http://localhost:8080/user/register";
+const registerUrl = "https://travelgo-backend.vercel.app/user/register";
 
 const signup = (info) => async (dispatch) => {
   dispatch({ type: SIGNUP_LOADING });

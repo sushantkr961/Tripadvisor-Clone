@@ -1,6 +1,7 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+
 import {
   Box,
   Button,
@@ -44,7 +45,12 @@ const HotelDetails = () => {
   });
 
   return (
-    <Box w={{ base: "100%", lg: "65%" }} h={{ base: "" }} margin={"auto"}>
+    <Box
+      textTransform={"capitalize"}
+      w={{ base: "100%", lg: "65%" }}
+      h={{ base: "" }}
+      margin={"auto"}
+    >
       <Box px={5} py={5} w={{ base: "100%", md: "69%" }} textAlign={"left"}>
         <chakra.h3
           fontFamily={"Work Sans"}
@@ -54,7 +60,7 @@ const HotelDetails = () => {
           color={"black"}
           textTransform={"capitalize"}
         >
-          {singleData.city_slug}
+          {singleData?.title}
         </chakra.h3>
         <Flex>
           <MdRateReview fontSize={20} />
@@ -78,8 +84,8 @@ const HotelDetails = () => {
             textAlign={"left"}
             color={"black"}
           >
-            {singleData.city}, {singleData.state_slug},{singleData.state},
-            {singleData.country}
+            {singleData?.city}, {singleData?.state_slug},{singleData?.state},
+            {singleData?.country}
           </chakra.h5>
         </Flex>
       </Box>
