@@ -1,7 +1,9 @@
-# industrious-steam-9257
+# Tripadvisor - Clone
 Tripadvisor is an American online travel company that operates a website and mobile app with user-generated content and a comparison shopping website. It also offers online hotel reservations and bookings for transportation, lodging, travel experiences, and restaurants.Its headquarters are in Needham, Massachusetts.
 <br>
 The tripadvisor website has been cloned by myself and my team of 4 members as project of our construct week at **Masai School** over 5 days.
+
+#### Project Code - industrious-steam-9257
 
 ## Technology
 - **Front-end:** HTML, CSS, JavaScript,ReactJs, Redux, ChakraUi.
