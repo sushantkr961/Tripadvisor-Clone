@@ -29,7 +29,7 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 *******************************************************************************
 
 2. Tripadvisor hotels page
-![LandingPage](Frontend/src/Components/Homepage/assests/readme/Hotel Details.png)
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/HotelDetails.png)
 *******************************************************************************
 
 3. POST Hotel Dashboard (Only for admin)
@@ -37,15 +37,15 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 *******************************************************************************
 
 4. Signup and sign-in pages
-![LandingPage](Frontend/src/Components/Homepage/assests/readme/SignIn Page.png)
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/SignInPage.png)
 *******************************************************************************
 
-4. Payment Page
-![LandingPage](Frontend/src/Components/Homepage/assests/readme/Traveller Details.png)
+5. Payment Page
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/TravellerDetails.png)
 *******************************************************************************
 
 6. Admin Dashboard (Only for admin)
-![LandingPage](Frontend/src/Components/Homepage/assests/readme/All users admin.png)
+![LandingPage](Frontend/src/Components/Homepage/assests/readme/Allusersadmin.png)
 *******************************************************************************
 
 7. Footer section
