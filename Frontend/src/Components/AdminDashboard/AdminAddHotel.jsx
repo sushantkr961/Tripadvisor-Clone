@@ -41,7 +41,7 @@ export default function AdminAddHotel() {
   const formSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8080/hotel/postHotel", {
+    fetch("https://travelgo-backend.vercel.app/hotel/postHotel", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",

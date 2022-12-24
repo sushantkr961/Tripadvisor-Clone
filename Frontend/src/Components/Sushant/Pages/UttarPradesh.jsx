@@ -1,5 +1,5 @@
 import React from "react";
-import up from "../assests/up.mp4";
+import uttrakhand from "../assests/uk.mp4";
 import {
   AspectRatio,
   Box,
@@ -15,7 +15,7 @@ const UttarPradesh = () => {
   return (
     <Box w={{ base: "100%", md: "70%" }} margin="auto">
       <AspectRatio ratio={16 / 9} mb="30px">
-        <video src={up} autoPlay loop muted />
+        <video src={uttrakhand} autoPlay loop muted />
       </AspectRatio>
       <Box>
         <Box>
@@ -44,7 +44,22 @@ const UttarPradesh = () => {
                 AYODHYA
               </chakra.h5>
               <Text mb={"50px"}>
-              Famed as the birth place of Lord Ram, it is an important pilgrimage centre situated on the right bank of the river Saryu, about 110 km from Lucknow.For centuries, it was the capital of the descendants of the Surya dynasty of which Lord Rama was the most renowned king. Ayodhya during ancient times was known as Kaushal Desh. Skand and some other Puranas rank Ayodhya as one of the seven most sacred cities of India.Ayodhya is pre-eminently a city of temples. Remnants of Hinduism, Buddhism, Jainism and Islam can still be found in Ayodhya.According to Jain tradition, five Tirthankaras were born at Ayodhya, including Adinath (Rishabhadeva) the 1st Tirthankar. Ramkot, Hanumangarhi,Kanak Bhawan and Suraj Kund appear to spring up from pages of history.The Saryu is a sacred river and finds mention in ancient scriptures. Hundreds of devotees come here to take a holy dip in Saryu throughout the year on various religious occasions.
+                Famed as the birth place of Lord Ram, it is an important
+                pilgrimage centre situated on the right bank of the river Saryu,
+                about 110 km from Lucknow.For centuries, it was the capital of
+                the descendants of the Surya dynasty of which Lord Rama was the
+                most renowned king. Ayodhya during ancient times was known as
+                Kaushal Desh. Skand and some other Puranas rank Ayodhya as one
+                of the seven most sacred cities of India.Ayodhya is
+                pre-eminently a city of temples. Remnants of Hinduism, Buddhism,
+                Jainism and Islam can still be found in Ayodhya.According to
+                Jain tradition, five Tirthankaras were born at Ayodhya,
+                including Adinath (Rishabhadeva) the 1st Tirthankar. Ramkot,
+                Hanumangarhi,Kanak Bhawan and Suraj Kund appear to spring up
+                from pages of history.The Saryu is a sacred river and finds
+                mention in ancient scriptures. Hundreds of devotees come here to
+                take a holy dip in Saryu throughout the year on various
+                religious occasions.
               </Text>
               <Link
                 href="https://uptourism.gov.in/en"
@@ -74,11 +89,11 @@ const UttarPradesh = () => {
           fontSize={30}
           textAlign={"left"}
           color={"black"}
-          mt={'50px'}
+          mt={"50px"}
         >
           Social Feed
         </chakra.h3>
-        <Flex mt="15px" p={'1.5'}>
+        <Flex mt="15px" p={"1.5"}>
           <Image src="https://th.bing.com/th/id/OIP.ZGONefKA_HX8379ZZQYrnwHaDJ?w=346&h=148&c=7&r=0&o=5&dpr=1.1&pid=1.7" />
           <Image src="https://th.bing.com/th/id/OIP.aXyh-sxJwLXL59DXQN8uTgHaFS?w=249&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" />
           <Image src="https://th.bing.com/th/id/OIP.nI0acXto4m-e1i0kOpLxOgAAAA?w=193&h=129&c=7&r=0&o=5&dpr=1.1&pid=1.7" />
