@@ -12,14 +12,14 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 - **Hosting:** Vercel
 
 ## Features
+- Multi-level interaction in the sign-up process for users to know their needs and to provide service accordingly
 - Transitioning accordions in various positions for various purposes.
-- Multi-level interaction in the sign-up process for users to know their needs and to provide service accordingly and
-- password strength given by the user is displayed live.
+- Password strength given by the user is displayed live.
 - Sign-in for users.
-- search for hotels
-- make payment
-- book your trip
-- admin dashboard
+- Search for hotels
+- Make payment
+- Book your trip
+- Admin dashboard
 
 ## Snapshots of the project
 
@@ -39,11 +39,11 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 *******************************************************************************
 
 5. Admin Dashboard
-***********************************************************************
+*******************************************************************************
 
 6. Footer section
 ![LandingPage](Frontend/src/Assects/readme/footer.png)
-***********************************************************************
+*******************************************************************************
 
  
 ## Demo
