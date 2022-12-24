@@ -18,7 +18,7 @@ const hotelSchema = new mongoose.Schema({
   created_on: { type: Boolean, default: true },
   city: { type: String, required: true, trim: true },
   images_large: { type: Array, default: hotelImages },
-  id: { type: String, default: Math.random() * 100000 },
+  id: { type: String, default: Math.floor(Math.random() * 100000) },
   property_type: { type: String, default: "Hotel" },
   title: { type: String, required: true },
   country: { type: String, required: true, default: "India" },

@@ -10,7 +10,7 @@ import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import TravellerDetails from "../Components/Ravi/TravellerDetails";
 import PaymentDetails from "../Components/Ravi/PaymentDetails";
-import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel"
+import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
 import Maharashtra from "../Components/Sushant/Pages/Maharastra";
 import Rajasthan from "../Components/Sushant/Pages/Rajasthan";
 import MadhyaPradesh from "../Components/Sushant/Pages/MadhyaPradesh";
@@ -19,6 +19,7 @@ import Assam from "../Components/Sushant/Pages/Assam";
 import Jammu from "../Components/Sushant/Pages/Jammu";
 import Uttrakhand from "../Components/Sushant/Pages/Uttrakhand";
 import UttarPradesh from "../Components/Sushant/Pages/UttarPradesh";
+import { SingleUser } from "../Components/AdminDashboard/SingleUserPage";
 
 const AllRoutes = () => {
   return (
@@ -47,6 +48,8 @@ const AllRoutes = () => {
         <Route path={"/uttarpradeshtourism"} element={<UttarPradesh />} />
         <Route path={"*"} element={<ErrorPage />} />
         <Route path={"/userdetails"} element={<TravellerDetails />} />
+        {/* <Route path={"/userdetails/:id"} element={<SingleUser />} /> */}
+
         <Route path={"/payments"} element={<PaymentDetails />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path={"/addhotel"} element={<AdminAddHotel />} />
