@@ -29,21 +29,23 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 *******************************************************************************
 
 2. CozyTrip hotels page
-![LandingPage](Frontend/src/Assects/readme/header.png)
+![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
 *******************************************************************************
 
 3. Signup and sign-in pages
-![LandingPage](Frontend/src/Assects/readme/login.png)
+![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
 *******************************************************************************
 
 4. Payment Page
+![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
 *******************************************************************************
 
 5. Admin Dashboard
+![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
 *******************************************************************************
 
 6. Footer section
-![LandingPage](Frontend/src/Assects/readme/footer.png)
+![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
 *******************************************************************************
 
  
