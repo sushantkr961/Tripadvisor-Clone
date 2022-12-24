@@ -21,6 +21,7 @@ import Assam from "../Components/Sushant/Pages/Assam";
 import Jammu from "../Components/Sushant/Pages/Jammu";
 import Uttrakhand from "../Components/Sushant/Pages/Uttrakhand";
 import UttarPradesh from "../Components/Sushant/Pages/UttarPradesh";
+import { SingleUser } from "../Components/AdminDashboard/SingleUserPage";
 
 const AllRoutes = () => {
   return (
