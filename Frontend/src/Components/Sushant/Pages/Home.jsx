@@ -1,5 +1,6 @@
 import React from "react";
 import Explore from "../Components/Explore";
+import GetOut from "../Components/GetOut";
 import IndiaTour from "../Components/IndiaTour";
 import Searchbar from "../Components/Searchbar";
 import Temple from "../Components/Temple";
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <Searchbar />
       <IndiaTour />
+      <GetOut />
       <Explore />
       <Temple />
     </>

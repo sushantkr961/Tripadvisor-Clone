@@ -1,4 +1,4 @@
-import { Box, chakra, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, chakra, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 
 export default function Explore() {
   return (
@@ -7,7 +7,7 @@ export default function Explore() {
       mx={"auto"}
       pt={5}
       px={{ base: 2, sm: 12, md: 17 }}
-      w={{base:"100%", md:"90%", lg:'71%'}}
+      w={{ base: "100%", md: "90%", lg: "71%" }}
     >
       <chakra.h1
         textAlign={"left"}
@@ -24,9 +24,11 @@ export default function Explore() {
             h="235px"
             w="364px"
           />
-          <Text fontSize="18px" fontWeight="bold">
-            11 beautiful places in India that have to be seen to be believed
-          </Text>
+          <Link href="https://www.tripadvisor.com/Articles-lPcMIbudrFsY-Gorgeous_places_in_india_for_your_bucket_list.html">
+            <Text fontSize="18px" fontWeight="bold">
+              11 beautiful places in India that have to be seen to be believed
+            </Text>
+          </Link>
         </Box>
 
         <Box px={{ base: 4, md: 8 }} py={"5"} rounded={"lg"}>
@@ -35,9 +37,11 @@ export default function Explore() {
             h="235px"
             w="364px"
           />
-          <Text fontSize="18px" fontWeight="bold">
-            5 beautiful hill stations in South India
-          </Text>
+          <Link href="https://www.tripadvisor.com/Articles-li0M2AUf6tr4-Best_hill_stations_in_south_india.html">
+            <Text fontSize="18px" fontWeight="bold">
+              5 beautiful hill stations in South India
+            </Text>
+          </Link>
         </Box>
 
         <Box px={{ base: 4, md: 8 }} py={"5"} rounded={"lg"}>
@@ -46,9 +50,11 @@ export default function Explore() {
             h="235px"
             w="364px"
           />
-          <Text fontSize="18px" fontWeight="bold">
-            Best time to visit Dubai for great weather and deals
-          </Text>
+          <Link href="https://www.tripadvisor.com/Articles-lsgYPejlYTtE-Best_time_to_visit_dubai.html">
+            <Text fontSize="18px" fontWeight="bold">
+              Best time to visit Dubai for great weather and deals
+            </Text>
+          </Link>
         </Box>
       </SimpleGrid>
     </Box>

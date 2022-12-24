@@ -85,7 +85,7 @@ export default function Navbar() {
             </Text>
             <Link to={"/login"}>
               <Button
-                display={{ base: "none", md: "inline-flex" }}
+                display={"inline-flex"}
                 fontSize={"md"}
                 fontWeight={700}
                 color={"white"}
