@@ -28,10 +28,10 @@ const Bihar = () => {
           >
             Unlock Bihar
           </chakra.h3>
-          <Text>Extraordinary places to visit</Text>
+          <Text color={"purple.400"}>Extraordinary places to visit</Text>
 
-          <Flex flexDir={{ base: "column", lg: "row" }} gap={5} border={"1px"}>
-            <Box border={"1px"} w={{ base: "100%", md: "80%", lg: "90%" }}>
+          <Flex flexDir={{ base: "column", lg: "row" }} gap={5}>
+            <Box w={{ base: "100%", md: "80%", lg: "90%" }}>
               <chakra.h5
                 fontFamily={"Work Sans"}
                 fontWeight={"bold"}
@@ -74,7 +74,7 @@ const Bihar = () => {
                 </Button>
               </Link>
             </Box>
-            <Box border={"1px"}>
+            <Box>
               <Image
                 src="https://th.bing.com/th/id/R.21d94e41e3f1097a086574fc7915c0f8?rik=uSSvQup61tHAMw&riu=http%3a%2f%2f3.bp.blogspot.com%2f_Y-CUxvBqU_o%2fTHY88CQG0BI%2fAAAAAAAAAAg%2ff3FVkV0LB14%2fs1600%2fimage002.jpg&ehk=lFnhcLb8O2Rp%2fLmHgybf9xcordlF7KXGHbLTi8VaGQw%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
                 w={"100%"}
@@ -89,10 +89,11 @@ const Bihar = () => {
           fontSize={30}
           textAlign={"left"}
           color={"black"}
+          mt={'50px'}
         >
           Social Feed
         </chakra.h3>
-        <Box mt="10px">
+        <Box mt="15px" p={'1.5'}>
           <Image src="https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/social-media-feed/social-feed-image.jpg/jcr:content/renditions/cq5dam.web.1280.765.jpeg" />
         </Box>
       </Box>

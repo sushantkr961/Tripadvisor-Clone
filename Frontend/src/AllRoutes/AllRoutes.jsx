@@ -12,6 +12,15 @@ import TravellerDetails from "../Components/Ravi/TravellerDetails";
 import PaymentDetails from "../Components/Ravi/PaymentDetails";
 import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
 import { SingleUser } from "../Components/AdminDashboard/SingleUserPage";
+import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel"
+import Maharashtra from "../Components/Sushant/Pages/Maharastra";
+import Rajasthan from "../Components/Sushant/Pages/Rajasthan";
+import MadhyaPradesh from "../Components/Sushant/Pages/MadhyaPradesh";
+import Kerela from "../Components/Sushant/Pages/Kerela";
+import Assam from "../Components/Sushant/Pages/Assam";
+import Jammu from "../Components/Sushant/Pages/Jammu";
+import Uttrakhand from "../Components/Sushant/Pages/Uttrakhand";
+import UttarPradesh from "../Components/Sushant/Pages/UttarPradesh";
 
 const AllRoutes = () => {
   return (
@@ -30,6 +39,14 @@ const AllRoutes = () => {
           }
         />
         <Route path={"/bihartourism"} element={<Bihar />} />
+        <Route path={"/maharastratourism"} element={<Maharashtra />} />
+        <Route path={"/rajasthantourism"} element={<Rajasthan />} />
+        <Route path={"/madhyapradeshtourism"} element={<MadhyaPradesh />} />
+        <Route path={"/kerelatourism"} element={<Kerela />} />
+        <Route path={"/assamtourism"} element={<Assam />} />
+        <Route path={"/uttrakhandtourism"} element={<Uttrakhand />} />
+        <Route path={"/jammutourism"} element={<Jammu />} />
+        <Route path={"/uttarpradeshtourism"} element={<UttarPradesh />} />
         <Route path={"*"} element={<ErrorPage />} />
         <Route path={"/userdetails"} element={<TravellerDetails />} />
         {/* <Route path={"/userdetails/:id"} element={<SingleUser />} /> */}

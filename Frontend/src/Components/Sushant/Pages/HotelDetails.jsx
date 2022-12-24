@@ -1,7 +1,6 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
-// import data from "../../../hotel.json";
 import {
   Box,
   Button,
