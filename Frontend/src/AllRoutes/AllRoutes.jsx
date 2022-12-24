@@ -10,7 +10,8 @@ import HotelDetails from "../Components/Sushant/Pages/HotelDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import TravellerDetails from "../Components/Ravi/TravellerDetails";
 import PaymentDetails from "../Components/Ravi/PaymentDetails";
-import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel"
+import AdminAddHotel from "../Components/AdminDashboard/AdminAddHotel";
+import { SingleUser } from "../Components/AdminDashboard/SingleUserPage";
 
 const AllRoutes = () => {
   return (
@@ -31,6 +32,8 @@ const AllRoutes = () => {
         <Route path={"/bihartourism"} element={<Bihar />} />
         <Route path={"*"} element={<ErrorPage />} />
         <Route path={"/userdetails"} element={<TravellerDetails />} />
+        {/* <Route path={"/userdetails/:id"} element={<SingleUser />} /> */}
+
         <Route path={"/payments"} element={<PaymentDetails />} />
         <Route path="*" element={<ErrorPage />} />
         <Route path={"/addhotel"} element={<AdminAddHotel />} />

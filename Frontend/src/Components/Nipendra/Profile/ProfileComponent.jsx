@@ -11,9 +11,7 @@ import {
 } from "@chakra-ui/react";
 import styles from "./profile.module.css";
 import { FiSettings } from "react-icons/fi";
-import { BsCart3 } from "react-icons/bs";
-import { BiSupport } from "react-icons/bi";
-import { FaUserEdit } from "react-icons/fa";
+import { BiCart, BiSupport } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import { AiOutlinePoweroff } from "react-icons/ai";
 import { GrUserAdmin } from "react-icons/gr";
@@ -24,8 +22,7 @@ import { getUser, logout } from "../../../Redux/Users/Login/login.action";
 
 const LinkItems = [
   { name: "Account", icon: FiSettings, href: "/profile/account" },
-  { name: "Orders", icon: BsCart3, href: "/profile/orders" },
-  { name: "Address", icon: FaUserEdit, href: "/profile/address" },
+  { name: "Cart", icon: BiCart, href: "/profile/cart" },
   { name: "Support", icon: BiSupport, href: "/profile/support" },
   //   { name: "User's List", icon: BiSupport, href: "/profile/admin" },
 ];
@@ -62,7 +59,7 @@ export default function SimpleSidebar({ children }) {
       </Drawer>
       {/* mobilenav */}
       <MobileNav display={{ base: "flex", md: "none" }} onOpen={onOpen} />
-      <Box border={"1px"} ml={{ base: 0, md: "28%" }} p="4">
+      <Box ml={{ base: 0, md: "28%" }} p="4">
         {children}
       </Box>
     </Box>
@@ -105,6 +102,32 @@ const SidebarContent = ({ onClose, children, ...rest }) => {
         </Text>
         {/* {userInfo?.User?.email} */}
       </Box>
+      {userInfo?.User?.role === "admin" ? (
+        <NavLink
+          to={"/profile/admin"}
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.default
+          }
+        >
+          <Flex justifyContent={"space-between"} px={6} py={6}>
+            <Text color={"black"}>All Users Information (Admin)</Text>
+            <Icon as={GrUserAdmin} />
+          </Flex>
+        </NavLink>
+      ) : null}
+      {userInfo?.User?.role === "admin" ? (
+        <NavLink
+          to={"/profile/adminHotel"}
+          className={({ isActive }) =>
+            isActive ? styles.active : styles.default
+          }
+        >
+          <Flex justifyContent={"space-between"} px={6} py={6}>
+            <Text color={"black"}>POST Hotels (Admin)</Text>
+            <Icon as={GrUserAdmin} />
+          </Flex>
+        </NavLink>
+      ) : null}
       {LinkItems.map((link) => (
         <NavLink
           className={({ isActive }) =>
@@ -119,19 +142,7 @@ const SidebarContent = ({ onClose, children, ...rest }) => {
           </Flex>
         </NavLink>
       ))}
-      {userInfo?.User?.role === "admin" ? (
-        <NavLink
-          to={"/profile/admin"}
-          className={({ isActive }) =>
-            isActive ? styles.active : styles.default
-          }
-        >
-          <Flex justifyContent={"space-between"} px={6} py={6}>
-            <Text color={"black"}>POST Hotels (Admin)</Text>
-            <Icon as={GrUserAdmin} />
-          </Flex>
-        </NavLink>
-      ) : null}
+
       <NavLink
         to={"/"}
         className={({ isActive }) =>

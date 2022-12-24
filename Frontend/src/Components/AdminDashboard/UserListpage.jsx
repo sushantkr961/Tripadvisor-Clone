@@ -79,7 +79,7 @@ export const UserListpage = () => {
                         </Td>
                         <Td bg="blackAlpha.800">
                           {" "}
-                          <Link to={`/Listofusers/${e._id}`}>
+                          <Link to={`/profile/admin/${e._id}`}>
                             {" "}
                             <Button m="5px" colorScheme="teal" size="sm">
                               More Details

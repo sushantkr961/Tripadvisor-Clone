@@ -17,9 +17,11 @@ import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
 import { AiOutlineUser } from "react-icons/ai";
+import { FaUserAlt } from "react-icons/fa";
+import { RiAdminFill } from "react-icons/ri";
 
 export default function Navbar() {
-  const { isAuth } = useSelector((store) => store.login);
+  const { isAuth, userInfo } = useSelector((store) => store.login);
   // const dispatch = useDispatch();
 
   const handleAuth = () => {
@@ -88,34 +90,42 @@ export default function Navbar() {
                 display={{ base: "none", md: "inline-flex" }}
                 fontSize={"md"}
                 fontWeight={700}
-                color={"white"}
-                bg={"black"}
+                bg={"white"}
                 borderRadius={"20px"}
-                _hover={{
-                  bg: "white",
-                  color: "black",
-                  border: "1px",
-                }}
                 onClick={handleAuth}
               >
                 {isAuth ? (
                   <Link to={"/profile/account"}>
-                    <Icon as={AiOutlineUser} />
+                    <Icon
+                      mt={2}
+                      w={6}
+                      h={6}
+                      fontWeight={"bold"}
+                      as={
+                        userInfo?.User?.role === "admin"
+                          ? RiAdminFill
+                          : FaUserAlt
+                      }
+                    />
                   </Link>
                 ) : (
                   "Sign In"
                 )}
               </Button>
             </Link>
-            <Text
-              as={"button"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"#"}
-            >
-              <HiOutlineShoppingCart fontSize={30} />
-            </Text>
+            <Link to={"/profile/cart"}>
+              <Text
+                m={"auto"}
+                mt={2}
+                as={"button"}
+                fontSize={"sm"}
+                fontWeight={400}
+                variant={"link"}
+                href={"#"}
+              >
+                <HiOutlineShoppingCart fontSize={30} />
+              </Text>
+            </Link>
           </Stack>
         </Flex>
       </Box>
