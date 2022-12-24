@@ -25,7 +25,7 @@ The tripadvisor website has been cloned by myself and my team of 4 members as pr
 ## Snapshots of the project
 
 1. Landing page and navigation bar
-![LandingPage](Frontend/src/Components/Sushant/assects/readme/LandingPage.png)
+![LandingPage](./Frontend/src/Components/Homepage/assests/readme/LandingPage.png)
 *******************************************************************************
 
 2. CozyTrip hotels page

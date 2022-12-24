@@ -1,6 +1,6 @@
 import AllRoutes from "./AllRoutes/AllRoutes";
-import Navbar from "./Components/Sushant/Components/Navbar";
-import Footer from "./Components/Sushant/Components/Footer";
+import Footer from "./Components/Homepage/Components/Footer";
+import Navbar from "./Components/Homepage/Components/Navbar";
 
 function App() {
   return (

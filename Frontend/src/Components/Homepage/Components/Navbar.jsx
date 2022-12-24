@@ -74,15 +74,6 @@ export default function Navbar() {
               variant={"link"}
               href={"#"}
             >
-              <FiHeart fontSize={25} />
-            </Text>
-            <Text
-              as={"button"}
-              fontSize={"sm"}
-              fontWeight={400}
-              variant={"link"}
-              href={"#"}
-            >
               <MdOutlineNotifications fontSize={30} />
             </Text>
             <Link to={"/login"}>
