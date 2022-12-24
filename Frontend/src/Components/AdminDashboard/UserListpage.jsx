@@ -20,9 +20,9 @@ export const UserListpage = () => {
     fetch("https://travelgo-backend.vercel.app/user/getUsers")
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         const { users } = res;
         setUser(users);
-        //   console.log(res)
       });
   }, []);
 
