@@ -77,6 +77,14 @@ worked on hotel list, admin dashboard
 >Github: [Ravi Roshan](https://github.com/Ravi98351)
 worked on payment page and user details page
 
+## Run on your Machine
+1. cd Frontend
+2. npm install
+3. npm start
+
+### Login as an admin 
+- email:- sushantonly961@gmail.com
+- password:- 1234
 
 
 
